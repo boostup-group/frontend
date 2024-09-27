@@ -1,14 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  redirects: () => {
-    return [
-      {
-        source: "/",
-        destination: "/en",
-        permanent: true,
-      },
-    ];
-  },
+  // Use the appropriate output based on your environment
+  output: 'development' === 'production' ? 'export' : 'standalone',
+
   env: {
     API_PROD_URL: "https://api.netflixtunisie.com/api/",
     // API_PROD_URL: "https://laravel.pixelstrap.net/fastkart/api/",
@@ -16,6 +10,7 @@ const nextConfig = {
     PAYMENT_CANCEL_URL: "http://204.216.214.207:3000/",
   },
   images: {
+    unoptimized: process.env.NODE_ENV === 'production', // Disable optimization for production
     remotePatterns: [
       {
         protocol: "https",
@@ -39,6 +34,16 @@ const nextConfig = {
         pathname: "**",
       }
     ],
+  },
+  // Add your redirects here, if needed
+  redirects: async () => {
+    return [
+      {
+        source: "/",
+        destination: "/en",
+        permanent: true,
+      },
+    ];
   },
 };
 
