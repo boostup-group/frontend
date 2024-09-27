@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Use the appropriate output based on your environment
-  output: 'development' === 'production' ? 'export' : 'standalone',
+  output: 'export',
 
   env: {
     API_PROD_URL: "https://api.netflixtunisie.com/api/",
