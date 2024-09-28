@@ -14,19 +14,19 @@ const SettingBox = () => {
   const [openSetting, setOpenSetting] = useState(false);
   const [rtlValue, setRtlValue] = useState(themeOption?.general?.language_direction?themeOption?.general?.language_direction:"ltr");
   const [lightDarkMode, setLightDarkMode] = useState(themeOption?.general?.mode?themeOption?.general?.mode:"light");
-  const [themeColor, setThemeColor] = useState("#0da487");
+  const [themeColor, setThemeColor] = useState("#E50914");
   const pathName = usePathname();
   useEffect(() => {
     const currentThemeColor = getComputedStyle(document.documentElement).getPropertyValue("--theme-color");
     if (currentThemeColor) {      
       setThemeColor(currentThemeColor.trimStart());
     } else {
-      setThemeColor("#0da487");
+      setThemeColor("#E50914");
     }
   }, [pathName]); 
   
    useEffect(() => {
-    setThemeColor(themeOption?.general?.primary_color ?? "#0da487" )
+    setThemeColor(themeOption?.general?.primary_color ?? "#E50914" )
     themeOption?.general?.mode === "dark"? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark");
     themeOption?.general?.language_direction == "rtl"? document.body.setAttribute("dir", "rtl"): document.body.setAttribute("dir", "ltr");
   }, [pathName,themeOption?.general?.mode,themeOption?.general?.language_direction]);
@@ -46,7 +46,7 @@ const SettingBox = () => {
   };
   return (
     <div className="setting-box">
-      <Btn className="btn setting-button theme-bg-color text-white" onClick={() => setOpenSetting((prev) => !prev)}>
+      {/* <Btn className="btn setting-button theme-bg-color text-white" onClick={() => setOpenSetting((prev) => !prev)}>
         {openSetting ? <RiCloseLine /> : <RiSettings3Fill />}
       </Btn>
       <div className={`theme-setting-2 ${openSetting ? "active" : ""}`}>
@@ -83,7 +83,7 @@ const SettingBox = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
