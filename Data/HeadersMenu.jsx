@@ -10,465 +10,392 @@ import commingSoon from '../public/assets/images/themes/08.jpg';
 export const headerMenu = [
   {
     id: 1,
-    title: 'Home',
+    title: 'Accueil',
     path: '/',
 
   },
   {
     id: 2,
+    title: 'À propos',
+    type: 'link',
+    path: '/about-us',
+  },
+  {
+    id: 3,
     title: 'Collection',
     styleType: 'link',
+    path: '/collections',
     slider: 'product',
     customChildren: true,
     children: [
       {
         column: [
           {
-            title: 'CollectionLayouts',
+            title: 'Notre Collection',
             type: 'sub',
           },
           {
-            title: 'CollectionLeftSidebar',
+            title: 'Netflix',
             path: 'collections',
-            params: { layout: 'collection_left_sidebar' },
+            params: { layout: 'collection_3_grid', category: 'netflix' },
             label: 'Hot',
             labelClass: 'warning-label',
           },
           {
-            title: 'CollectionRightSidebar',
+            title: 'Apple TV+',
             path: 'collections',
-            params: { layout: 'collection_right_sidebar' },
+            params: { layout: 'collection_3_grid', category: 'apple-tv' },
           },
           {
-            title: 'CollectionNoSidebar',
+            title: 'Disney+',
             path: 'collections',
-            params: { layout: 'collection_no_sidebar' },
+            params: { layout: 'collection_3_grid', category: 'disney' },
           },
           {
-            title: 'Collection3Grid',
-            path: 'collections',
-            params: { layout: 'collection_3_grid' },
-          },
-          {
-            title: 'Collection4Grid',
-            path: 'collections',
-            params: { layout: 'collection_4_grid' },
-            label: 'New',
-          },
-          {
-            title: 'Collection5Grid',
-            path: 'collections',
-            params: { layout: 'collection_5_grid' },
-          },
-          {
-            title: 'CollectionListView',
-            path: 'collections',
-            params: { layout: 'collection_list_view' },
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'CollectionLayouts',
-            type: 'sub',
-          },
-          {
-            title: 'CategorySlider',
-            path: 'collections',
-            params: { layout: 'collection_category_slider' },
-          },
-          {
-            title: 'CategorySidebar',
+            title: 'Shahid VIP',
             path: 'collections',
             label: 'New',
-            params: { layout: 'collection_category_sidebar' },
+            params: { layout: 'collection_3_grid', category: 'shahid-vip' },
           },
           {
-            title: 'CategoryBanner',
+            title: 'Prime Video',
             path: 'collections',
-            params: { layout: 'collection_banner' },
+            params: { layout: 'collection_3_grid', category: 'prime-video' },
           },
           {
-            title: 'OffCanvasFilter',
+            title: 'Paramount+',
             path: 'collections',
-            params: { layout: 'collection_offcanvas_filter' },
-          },
+            params: { layout: 'collection_3_grid', category: 'paramount' },
+          }
         ],
       },
     ],
   },
-  {
-    id: 3,
-    title: 'Product',
-    styleType: 'link',
-    slider: 'banner',
-    customChildren: true,
-    children: [
-      {
-        column: [
-          {
-            title: 'ProductPages',
-            type: 'sub',
-          },
-          {
-            title: 'ProductThumbnail',
-            path: 'product/deliciously-sweet-watermelon',
-            params: { layout: 'product_thumbnail' },
-          },
-          {
-            title: 'ProductImages',
-            path: 'product/deliciously-sweet-watermelon',
-            params: { layout: 'product_images' },
-          },
-          {
-            title: 'ProductSlider',
-            path: 'product/deliciously-sweet-watermelon',
-            params: { layout: 'product_slider' },
-          },
-          {
-            title: 'ProductSticky',
-            path: 'product/deliciously-sweet-watermelon',
-            params: { layout: 'product_sticky' },
-            labelClass: 'warning-label',
-          },
-          {
-            title: 'ProductAccordion',
-            path: 'product/deliciously-sweet-watermelon',
-            params: { layout: 'product_accordion' },
-          },
-          {
-            title: 'ProductTab',
-            path: 'product/deliciously-sweet-watermelon',
-            type: 'link',
-          },
-          {
-            title: 'ProductFeatures',
-            colHeadClass: 'custom-mt',
-            type: 'sub',
-          },
-          {
-            title: 'BundleCrossSale',
-            path: 'product/high-quality-bookshelves',
-          },
-          {
-            title: 'HotStockProgress',
-            path: 'product/mini-bodycon-dress',
-            label: 'New',
-          },
-          {
-            title: 'SoldOut',
-            path: 'product/solid-collared-tshirts',
-          },
-          {
-            title: 'SaleCountdown',
-            path: 'product/men-gym-co-ord-set',
-          },
-          {
-            title: 'ProductZoom',
-            path: 'product/deliciously-sweet-watermelon',
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'ProductVariantsStyle',
-            type: 'sub',
-          },
-          {
-            title: 'VariantRectangle',
-            path: 'product/organic-oranges',
-            type: 'link',
-          },
-          {
-            title: 'VariantCircle',
-            type: 'link',
-            path: 'product/solid-hooded-sweatshirt',
-            label: 'New',
-          },
-          {
-            title: 'VariantImagesWatch',
-            path: 'product/relaxed-fit-hoodie',
-            type: 'link',
-          },
-          {
-            title: 'VariantColor',
-            path: 'product/premium-blazer',
-            type: 'link',
-          },
-          {
-            title: 'VariantRadioButton',
-            path: 'product/women-flared-jeans',
-            type: 'link',
-          },
-          {
-            title: 'VariantDropdown',
-            path: 'product/fresh-and-pure-oil',
-            type: 'link',
-          },
-          {
-            title: 'ProductFeatures',
-            colHeadClass: 'custom-mt',
-            type: 'sub',
-          },
-          {
-            title: 'StickyCheckout',
-            path: 'product/elegant-and-durable-bed',
-            type: 'link',
-          },
-          {
-            title: 'DynamicCheckout',
-            type: 'link',
-            path: 'product/solid-polo-tshirt',
-            labelClass: 'warning-label',
-          },
-          {
-            title: 'SecureCheckout',
-            path: 'product/premium-dumbbells',
-            type: 'link',
-          },
-          {
-            title: 'ActiveProductView',
-            path: 'product/organic-long-grain-rice',
-            type: 'link',
-          },
-          {
-            title: 'ActiveLastOrders',
-            path: 'product/delicious-cupcakes',
-            type: 'link',
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'ProductFeatures',
-            type: 'sub',
-          },
-          {
-            title: 'ProductSimple',
-            path: 'product/deliciously-sweet-strawberry',
-            type: 'link',
-          },
-          {
-            title: 'ProductClassified',
-            path: 'product/deliciously-sweet-watermelon',
-            type: 'link',
-            params: { layout: 'product_thumbnail' },
-            label: 'New',
-          },
-          {
-            title: 'SizeChart',
-            type: 'link',
-            path: 'product/solid-hooded-sweatshirt',
-            label: 'New',
-          },
-          {
-            title: 'DeliveryAndReturn',
-            path: 'product/relaxed-fit-hoodie',
-            type: 'link',
-          },
-          {
-            title: 'PaymentTrustBadges',
-            path: 'product/delicious-exquisite-cake',
-            type: 'link',
-          },
-          {
-            title: 'AskAnExpert',
-            path: 'product/premium-blazer',
-            type: 'link',
-          },
-          {
-            title: 'ProductFeatures',
-            colHeadClass: 'custom-mt',
-            type: 'sub',
-          },
-          {
-            title: 'ProductTags',
-            path: 'product/solid-hooded-sweatshirt',
-            type: 'link',
-          },
-          {
-            title: 'ProductInformation',
-            path: 'product/solid-cotton-tshirts',
-            type: 'link',
-          },
-          {
-            title: 'SocialShare',
-            type: 'link',
-            path: 'product/pointed-toe-kitten-heeled-sandals',
-            label: 'Hot',
-            labelClass: 'warning-label',
-          },
-          {
-            title: 'RelatedProducts',
-            type: 'link',
-            path: 'product/delicious-biscuits',
-            label: 'Hot',
-            labelClass: 'warning-label',
-          },
-          {
-            title: 'WishlistAndCompare',
-            path: 'product/crispy-potato-chips',
-            type: 'link',
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: 'Product',
+  //   styleType: 'link',
+  //   slider: 'banner',
+  //   customChildren: true,
+  //   children: [
+  //     {
+  //       column: [
+  //         {
+  //           title: 'ProductPages',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'ProductThumbnail',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           params: { layout: 'product_thumbnail' },
+  //         },
+  //         {
+  //           title: 'ProductImages',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           params: { layout: 'product_images' },
+  //         },
+  //         {
+  //           title: 'ProductSlider',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           params: { layout: 'product_slider' },
+  //         },
+  //         {
+  //           title: 'ProductSticky',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           params: { layout: 'product_sticky' },
+  //           labelClass: 'warning-label',
+  //         },
+  //         {
+  //           title: 'ProductAccordion',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           params: { layout: 'product_accordion' },
+  //         },
+  //         {
+  //           title: 'ProductTab',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'ProductFeatures',
+  //           colHeadClass: 'custom-mt',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'BundleCrossSale',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //         },
+  //         {
+  //           title: 'HotStockProgress',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           label: 'New',
+  //         },
+  //         {
+  //           title: 'SoldOut',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //         },
+  //         {
+  //           title: 'SaleCountdown',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //         },
+  //         {
+  //           title: 'ProductZoom',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       column: [
+  //         {
+  //           title: 'ProductVariantsStyle',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'VariantRectangle',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'VariantCircle',
+  //           type: 'link',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           label: 'New',
+  //         },
+  //         {
+  //           title: 'VariantImagesWatch',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           type: 'link',
+  //         }
+  //       ],
+  //     },
+  //     {
+  //       column: [
+  //         {
+  //           title: 'ProductFeatures',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'ProductSimple',
+  //           path: 'product/deliciously-sweet-strawberry',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'ProductClassified',
+  //           path: 'product/abonnement-netflix-essentiel',
+  //           type: 'link',
+  //           params: { layout: 'product_thumbnail' },
+  //           label: 'New',
+  //         },
+  //         {
+  //           title: 'SizeChart',
+  //           type: 'link',
+  //           path: 'product/solid-hooded-sweatshirt',
+  //           label: 'New',
+  //         },
+  //         {
+  //           title: 'DeliveryAndReturn',
+  //           path: 'product/relaxed-fit-hoodie',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'PaymentTrustBadges',
+  //           path: 'product/delicious-exquisite-cake',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'AskAnExpert',
+  //           path: 'product/premium-blazer',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'ProductFeatures',
+  //           colHeadClass: 'custom-mt',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'ProductTags',
+  //           path: 'product/solid-hooded-sweatshirt',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'ProductInformation',
+  //           path: 'product/solid-cotton-tshirts',
+  //           type: 'link',
+  //         },
+  //         {
+  //           title: 'SocialShare',
+  //           type: 'link',
+  //           path: 'product/pointed-toe-kitten-heeled-sandals',
+  //           label: 'Hot',
+  //           labelClass: 'warning-label',
+  //         },
+  //         {
+  //           title: 'RelatedProducts',
+  //           type: 'link',
+  //           path: 'product/delicious-biscuits',
+  //           label: 'Hot',
+  //           labelClass: 'warning-label',
+  //         },
+  //         {
+  //           title: 'WishlistAndCompare',
+  //           path: 'product/crispy-potato-chips',
+  //           type: 'link',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   title: 'MegaMenu',
+  //   badge: 'New',
+  //   styleType: 'link',
+  //   customChildren: true,
+  //   slider: 'banner_landscape',
+  //   children: [
+  //     {
+  //       column: [
+  //         {
+  //           title: 'PopularCategories',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'VegetablesFruits',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { category: 'vegetables-fruits' },
+  //         },
+  //         {
+  //           title: 'BiscuitsSnacks',
+  //           type: 'link',
+  //           label: 'new',
+  //           path: 'collections',
+  //           params: { category: 'biscuits-snacks' },
+  //         },
+  //         {
+  //           title: 'DailyBreakfast',
+  //           type: 'link',
+  //           label: 'new',
+  //           path: 'collections',
+  //           params: { category: 'daily-breakfast' },
+  //         },
+  //         {
+  //           title: 'TrendyFashion',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { category: 'fashion' },
+  //         },
+  //         {
+  //           title: 'FurnitureDecore',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { category: 'furniture' },
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       column: [
+  //         {
+  //           title: 'PopularTags',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'BeautyProducts',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { tag: 'beauty' },
+  //         },
+  //         {
+  //           title: 'ElectronicsAccessories',
+  //           type: 'link',
+  //           label: 'hot',
+  //           labelClass: 'warning-label',
+  //           path: 'collections',
+  //           params: { tag: 'electronics' },
+  //         },
+  //         {
+  //           title: 'PetShop',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { tag: 'pet-shop' },
+  //         },
+  //         {
+  //           title: 'MilkDairyProducts',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { tag: 'milk-dairy-products' },
+  //         },
+  //         {
+  //           title: 'Sports',
+  //           type: 'link',
+  //           path: 'collections',
+  //           params: { tag: 'sports' },
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       column: [
+  //         {
+  //           title: 'EmailTemplate',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'WelcomeTemplate',
+  //           type: 'external_link',
+  //           path: 'https://themes.pixelstrap.com/fastkart/email-templete/welcome.html',
+  //         },
+  //         {
+  //           title: 'abondonment',
+  //           type: 'external_link',
+  //           label: 'hot',
+  //           labelClass: 'warning-label',
+  //           path: 'https://themes.pixelstrap.com/fastkart/email-templete/abandonment-email.html',
+  //         },
+  //         {
+  //           title: 'OfferTemplate',
+  //           type: 'external_link',
+  //           path: 'https://themes.pixelstrap.com/fastkart/email-templete/offer-template.html',
+  //         },
+  //         {
+  //           title: 'OrderSuccess',
+  //           type: 'external_link',
+  //           label: 'new',
+  //           path: 'https://themes.pixelstrap.com/fastkart/email-templete/order-success.html',
+  //         },
+  //         {
+  //           title: 'ResetPassword',
+  //           type: 'external_link',
+  //           path: 'https://themes.pixelstrap.com/fastkart/email-templete/reset-password.html',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       column: [
+  //         {
+  //           title: 'InvoiceTemplate',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'InvoiceTemplate1',
+  //           type: 'external_link',
+  //           path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-1.html',
+  //         },
+  //         {
+  //           title: 'InvoiceTemplate2',
+  //           type: 'external_link',
+  //           label: 'hot',
+  //           path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-2.html',
+  //         },
+  //         {
+  //           title: 'InvoiceTemplate3',
+  //           type: 'external_link',
+  //           path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-3.html',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     id: 4,
-    title: 'MegaMenu',
-    badge: 'New',
-    styleType: 'link',
-    customChildren: true,
-    slider: 'banner_landscape',
-    children: [
-      {
-        column: [
-          {
-            title: 'PopularCategories',
-            type: 'sub',
-          },
-          {
-            title: 'VegetablesFruits',
-            type: 'link',
-            path: 'collections',
-            params: { category: 'vegetables-fruits' },
-          },
-          {
-            title: 'BiscuitsSnacks',
-            type: 'link',
-            label: 'new',
-            path: 'collections',
-            params: { category: 'biscuits-snacks' },
-          },
-          {
-            title: 'DailyBreakfast',
-            type: 'link',
-            label: 'new',
-            path: 'collections',
-            params: { category: 'daily-breakfast' },
-          },
-          {
-            title: 'TrendyFashion',
-            type: 'link',
-            path: 'collections',
-            params: { category: 'fashion' },
-          },
-          {
-            title: 'FurnitureDecore',
-            type: 'link',
-            path: 'collections',
-            params: { category: 'furniture' },
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'PopularTags',
-            type: 'sub',
-          },
-          {
-            title: 'BeautyProducts',
-            type: 'link',
-            path: 'collections',
-            params: { tag: 'beauty' },
-          },
-          {
-            title: 'ElectronicsAccessories',
-            type: 'link',
-            label: 'hot',
-            labelClass: 'warning-label',
-            path: 'collections',
-            params: { tag: 'electronics' },
-          },
-          {
-            title: 'PetShop',
-            type: 'link',
-            path: 'collections',
-            params: { tag: 'pet-shop' },
-          },
-          {
-            title: 'MilkDairyProducts',
-            type: 'link',
-            path: 'collections',
-            params: { tag: 'milk-dairy-products' },
-          },
-          {
-            title: 'Sports',
-            type: 'link',
-            path: 'collections',
-            params: { tag: 'sports' },
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'EmailTemplate',
-            type: 'sub',
-          },
-          {
-            title: 'WelcomeTemplate',
-            type: 'external_link',
-            path: 'https://themes.pixelstrap.com/fastkart/email-templete/welcome.html',
-          },
-          {
-            title: 'abondonment',
-            type: 'external_link',
-            label: 'hot',
-            labelClass: 'warning-label',
-            path: 'https://themes.pixelstrap.com/fastkart/email-templete/abandonment-email.html',
-          },
-          {
-            title: 'OfferTemplate',
-            type: 'external_link',
-            path: 'https://themes.pixelstrap.com/fastkart/email-templete/offer-template.html',
-          },
-          {
-            title: 'OrderSuccess',
-            type: 'external_link',
-            label: 'new',
-            path: 'https://themes.pixelstrap.com/fastkart/email-templete/order-success.html',
-          },
-          {
-            title: 'ResetPassword',
-            type: 'external_link',
-            path: 'https://themes.pixelstrap.com/fastkart/email-templete/reset-password.html',
-          },
-        ],
-      },
-      {
-        column: [
-          {
-            title: 'InvoiceTemplate',
-            type: 'sub',
-          },
-          {
-            title: 'InvoiceTemplate1',
-            type: 'external_link',
-            path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-1.html',
-          },
-          {
-            title: 'InvoiceTemplate2',
-            type: 'external_link',
-            label: 'hot',
-            path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-2.html',
-          },
-          {
-            title: 'InvoiceTemplate3',
-            type: 'external_link',
-            path: 'https://themes.pixelstrap.com/fastkart/invoice/invoice-3.html',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 5,
     title: 'Blog',
     styleType: 'link',
     customChildren: true,
@@ -477,211 +404,50 @@ export const headerMenu = [
       {
         column: [
           {
-            title: 'BlogPages',
+            title: 'Nos Catégories',
             type: 'sub',
           },
           {
-            title: 'BlogList',
+            title: 'Nouveautés et actualités',
             type: 'link',
             path: 'blogs',
-            params: { style: 'list_view', sidebar: 'left_sidebar' },
             label: 'New',
+            params: { category: 'nouveautes-et-actualites' },
           },
           {
-            title: 'GridLeftSidebar',
+            title: 'Recommendations',
             type: 'link',
             label: 'Hot',
             path: 'blogs',
-            params: { style: 'grid_view', sidebar: 'left_sidebar' },
+            params: { category: 'recommandations' },
+          },
+          {
+            title: "Guides d'achat",
+            type: 'link',
+            path: 'blogs',
+            params: { category: 'guides-dachat' },
+          },
+          {
+            title: 'Derrière les Coulisses',
+            type: 'link',
+            path: 'blogs',
             labelClass: 'warning-label',
+            params: { category: 'dermier-les-coulisses' },
           },
           {
-            title: 'GridRightSidebar',
+            title: 'Astuces et Conseils',
             type: 'link',
             path: 'blogs',
-            params: { style: 'grid_view', sidebar: 'right_sidebar' },
-          },
-          {
-            title: 'GridNoSidebar',
-            type: 'link',
-            path: 'blogs',
-            params: { style: 'grid_view', sidebar: 'no_sidebar' },
+            params: { category: 'astuces-et-conseils' },
           },
         ],
       },
     ],
   },
   {
-    id: 6,
-    title: 'About',
-    type: 'link',
-    path: '/about-us',
-    // customChildren: false,
-    // children: [
-    //   {
-    //     title: 'Authentication',
-    //     type: 'sub',
-    //     children: [
-    //       {
-    //         title: 'SignIn',
-    //         path: '/auth/login',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'SignUp',
-    //         path: '/auth/register',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'ForgotPassword',
-    //         path: '/auth/forgot-password',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'VerifyOtp',
-    //         path: '/auth/otp-verification',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'UpdatePassword',
-    //         path: '/auth/update-password',
-    //         type: 'link',
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     title: 'account',
-    //     type: 'sub',
-    //     children: [
-    //       {
-    //         title: 'MyDashboard',
-    //         path: '/account/dashboard',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'MyNotifications',
-    //         path: '/account/notification',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'MyWallet',
-    //         path: '/account/wallet',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'MyPoints',
-    //         path: '/account/point',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'MyOrders',
-    //         path: '/account/order',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'RefundHistory',
-    //         path: '/account/refund',
-    //         type: 'link',
-    //       },
-    //       {
-    //         title: 'PayoutDetails',
-    //         path: '/account/bank-details',
-    //         type: 'link',
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     title: 'AboutUs',
-    //     type: 'link',
-    //     path: '/about-us',
-    //   },
-    //   {
-    //     title: 'BrowseFaqs',
-    //     type: 'link',
-    //     path: '/faq',
-    //     label: 'hot',
-    //     labelClass: 'warning-label',
-    //   },
-    //   {
-    //     title: 'Cart',
-    //     type: 'link',
-    //     path: '/cart',
-    //   },
-    //   {
-    //     title: 'Checkout',
-    //     type: 'link',
-    //     path: '/checkout',
-    //   },
-    //   {
-    //     title: 'Compare',
-    //     type: 'link',
-    //     path: '/compare',
-    //   },
-    //   {
-    //     title: 'ContactUs',
-    //     path: '/contact-us',
-    //     type: 'link',
-    //   },
-    //   {
-    //     title: 'Maintenance',
-    //     type: 'link',
-    //     path: '/maintenance',
-    //   },
-    //   {
-    //     title: 'Offers',
-    //     type: 'link',
-    //     path: '/offers',
-    //     label: 'new',
-    //   },
-    //   {
-    //     title: 'Search',
-    //     type: 'link',
-    //     path: '/search',
-    //     label: 'hot',
-    //     labelClass: 'warning-label',
-    //   },
-    //   {
-    //     title: 'Wishlist',
-    //     type: 'link',
-    //     path: '/wishlist',
-    //   },
-    //   {
-    //     title: '404',
-    //     type: 'link',
-    //     path: '/404',
-    //   },
-    // ],
-  },
-  {
-    id: 7,
-    title: 'Contact Us',
+    id: 5,
+    title: 'Contact',
     type: 'link',
     path: '/contact-us',
-    // children: [
-    //   {
-    //     title: 'BecomeSeller',
-    //     path: '/seller/become-seller',
-    //   },
-    //   {
-    //     title: 'SellerStoresBasic',
-    //     path: '/seller/stores',
-    //     params: { layout: 'basic_store' },
-    //   },
-    //   {
-    //     title: 'SellerStoresClassic',
-    //     path: '/seller/stores',
-    //     params: { layout: 'classic_store' },
-    //   },
-    //   {
-    //     title: 'SellerDetailsBasic',
-    //     path: '/seller/stores/fruits-market',
-    //     params: { layout: 'basic_store_details' },
-    //   },
-    //   {
-    //     title: 'SellerDetailsClassic',
-    //     path: '/seller/stores/fruits-market',
-    //     params: { layout: 'classic_store_details' },
-    //   },
-    // ],
   },
 ];

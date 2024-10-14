@@ -14,7 +14,7 @@ const Category = () => {
   const categoryData = filterCategory('post');
   return (
     <AccordionItem>
-      <AccordionHeader targetId='2'>{t('Category')}</AccordionHeader>
+      <AccordionHeader targetId='2'>{t('Categories')}</AccordionHeader>
       <AccordionBody accordionId='2' className='p-0'>
         <div className='category-list-box'>
           {categoryData?.length > 0 ? (

@@ -16,10 +16,10 @@ const WishlistContent = () => {
   useEffect(() => {
     refetch();
   }, []);
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <>
-      <Breadcrumb title={'Wishlist'} subNavigation={[{ name: 'Wishlist' }]} />
+      {/* <Breadcrumb title={'Wishlist'} subNavigation={[{ name: 'Wishlist' }]} /> */}
 
       {data?.data?.length > 0 ? (
         <WrapperComponent classes={{ sectionClass: 'wishlist-section section-b-space', row: 'g-sm-3 g-2' }} customCol={true}>

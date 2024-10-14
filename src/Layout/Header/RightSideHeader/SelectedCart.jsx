@@ -35,15 +35,15 @@ const SelectedCart = ({ modal, setSelectedVariation, setModal }) => {
           <li className='product-box-contain' key={i}>
             <div className='drop-cart'>
               <Link href={`/${i18Lang}/product/${elem?.product?.slug}`} className='drop-image'>
-                <Avatar data={elem?.variation?.variation_image ?? elem?.product?.product_thumbnail} placeHolder={placeHolderImage} name={elem?.product?.name} height={72} width={87} />
+                <Avatar data={elem?.variation?.variation_image ?? elem?.product?.product_thumbnail} placeHolder={placeHolderImage} name={elem?.product?.title} height={72} width={87} />
               </Link>
 
               <div className='drop-contain'>
                 <Link href={`/${i18Lang}/product/${elem?.product?.slug}`}>
-                  <h5>{elem?.variation?.name ?? elem?.product?.name}</h5>
+                  <h5>{elem?.product?.name}</h5>
                 </Link>
                 <h6>{convertCurrency(elem?.variation?.sale_price ?? elem?.product?.sale_price)}</h6>
-                {elem?.variation && <h5 className='gram'>{elem?.variation?.selected_variation ?? elem?.product?.selected_variation}</h5>}
+                {elem?.variation && <h5 className='gram'>{elem?.variation?.selected_variation ?? elem?.product?.selected_variation} Mois</h5>}
                 <ul>
                   <HandleQuantity productObj={elem?.product} elem={elem} customIcon={<RiDeleteBinLine />} />
                 </ul>

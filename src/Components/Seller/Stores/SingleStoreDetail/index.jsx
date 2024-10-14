@@ -39,7 +39,7 @@ const SingleStoreDetail = ({ params }) => {
 
   return (
     <>
-      <Breadcrumb title={storeName} subNavigation={[{ name: 'SellerStores' },{ name:storeName  }]} />
+      {/* <Breadcrumb title={storeName} subNavigation={[{ name: 'SellerStores' },{ name:storeName  }]} /> */}
       {sellerDetailLayout == 'basic_store_details' ? (
         <SellerDetailBasic filter={filter} setFilter={setFilter} StoreData={StoreData} />
       ) : sellerDetailLayout == 'classic_store_details' ? (

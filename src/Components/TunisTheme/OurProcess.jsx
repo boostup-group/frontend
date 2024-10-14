@@ -195,7 +195,7 @@ export function OurProcess() {
       ),
     },
     {
-      title: "Etape 2",
+      title: "Etape 02",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Saisir vos informations personnelles</h1>
@@ -233,7 +233,7 @@ export function OurProcess() {
       ),
     },
     {
-      title: "Etape 3",
+      title: "Etape 03",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Choisir la méthode de paiement</h1>
@@ -271,7 +271,7 @@ export function OurProcess() {
       ),
     },,
     {
-      title: "Etape 4",
+      title: "Etape 04",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Finaliser la commande</h1>

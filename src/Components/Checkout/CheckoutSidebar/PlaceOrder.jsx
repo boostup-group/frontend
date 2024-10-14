@@ -5,6 +5,7 @@ import { OrderAPI, VerifyPayment } from '@/Utils/AxiosUtils/API';
 import useCreate from '@/Utils/Hooks/useCreate';
 import { useTranslation } from '@/app/i18n/client';
 import { useQuery } from '@tanstack/react-query';
+import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 
@@ -18,13 +19,14 @@ const PlaceOrder = ({ values }) => {
     if (resDta?.status == 200 || resDta?.status == 201) {
       resDta?.data?.order_number && setGetOrderNumber(resDta?.data?.order_number);
       // resDta?.data?.order_number && refetch();
-      if (values['payment_method'] == 'cod') {
+      if (values['payment_method'] == 'cod' || values['payment_method'] == 'bank' || values['payment_method'] == 'cash') {
         router.push(`/account/order/details/${resDta?.data?.order_number}`);
       } else {
         window.open(resDta?.data?.url, '_self');
       }
     }
   });
+  const isAuth = Cookies.get('uat');
   // useEffect(() => {
   //   // getOrderNumber && refetch();
   // }, [getOrderNumber]);
@@ -35,7 +37,7 @@ const PlaceOrder = ({ values }) => {
     mutate(values);
   };
   return (
-    <Btn className='btn-md fw-bold mt-4 text-white theme-bg-color w-100' loading={Number(isLoading)} onClick={handleClick}>
+    <Btn className='btn-md fw-bold mt-4 text-white theme-bg-color w-100' disabled={!isAuth} loading={Number(isLoading)} onClick={handleClick}>
       {t('PlaceOrder')}
     </Btn>
   );

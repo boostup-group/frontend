@@ -1,19 +1,21 @@
 import { Form, Formik } from 'formik';
 import { Col, Row } from 'reactstrap';
-// import DeliveryAddress from './DeliveryAddress';
+import DeliveryAddress from './DeliveryAddress';
 import DeliveryOptions from './DeliveryOptions';
 import PaymentOptions from './PaymentOptions';
-// import { useContext, useEffect, useState } from 'react';
-// import AccountContext from '@/Helper/AccountContext';
-// import useCreate from '@/Utils/Hooks/useCreate';
-// import { AddressAPI } from '@/Utils/AxiosUtils/API';
+import { useContext, useEffect, useState } from 'react';
+import AccountContext from '@/Helper/AccountContext';
+import useCreate from '@/Utils/Hooks/useCreate';
+import { AddressAPI } from '@/Utils/AxiosUtils/API';
 import CheckoutSidebar from './CheckoutSidebar';
 import { PaymentMethods } from '../../../Data/PaymentMethods';
+import GuestSignUp from './GuestSignUp';
+import Cookies from 'js-cookie';
 
 const CheckoutForm = () => {
-  // const { accountData, refetch } = useContext(AccountContext);
-  // const [address, setAddress] = useState([]);
-  // const [modal, setModal] = useState('');
+  const { accountData, refetch } = useContext(AccountContext);
+  const [address, setAddress] = useState([]);
+  const [modal, setModal] = useState('');
   // useEffect(() => {
   //   accountData?.address.length > 0 && setAddress((prev) => [...accountData?.address]);
   // }, [accountData]);
@@ -22,6 +24,9 @@ const CheckoutForm = () => {
   //   refetch();
   //   setModal('');
   // });
+
+  const isAuth = Cookies.get('uat');
+
   return (
     <Formik initialValues={{}}>
       {({ values, setFieldValue }) => (
@@ -32,11 +37,17 @@ const CheckoutForm = () => {
                 <div className='left-sidebar-checkout'>
                   <div className='checkout-detail-box'>
                     <ul>
-                      {/* <DeliveryAddress key='shipping' type='shipping' title={'Shipping'} values={values} updateId={values['consumer_id']} setFieldValue={setFieldValue} address={address} modal={modal} mutate={mutate} isLoading={isLoading} setModal={setModal}
+
+                      
+                    {!isAuth &&
+                      <GuestSignUp key='shipping' type='shipping' title={'Détails du compte'} values={values}  setFieldValue={setFieldValue} 
                       />
-                      <DeliveryAddress key='billing' type='billing' title={'Billing'} values={values} updateId={values['consumer_id']} setFieldValue={setFieldValue} address={address} modal={modal} mutate={mutate} isLoading={isLoading} setModal={setModal}
+                      }
+
+
+                      {/* <DeliveryAddress key='billing' type='billing' title={'Billing'} values={values} updateId={values['consumer_id']} setFieldValue={setFieldValue} address={address} modal={modal} mutate={mutate} isLoading={isLoading} setModal={setModal}
                       /> */}
-                      <DeliveryOptions values={values} setFieldValue={setFieldValue} />
+                      <DeliveryOptions values={values} setFieldValue={setFieldValue}/>
                       <PaymentOptions values={values} setFieldValue={setFieldValue} paymenMethods={PaymentMethods}/>
                     </ul>
                   </div>

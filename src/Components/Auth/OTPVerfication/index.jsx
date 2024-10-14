@@ -10,7 +10,7 @@ import OTPVerificationForm from './OTPVerificationForm';
 const OTPVerificationContent = () => {
   return (
     <>
-      <Breadcrumb title={'OTPVerification'} subNavigation={[{ name: 'OTPVerification' }]} />
+      {/* <Breadcrumb title={'OTPVerification'} subNavigation={[{ name: 'OTPVerification' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'log-in-section section-b-space forgot-section', fluidClass: 'w-100' }} customCol={true}>
         <Col xxl={6} xl={5} lg={6} className='d-lg-block d-none ms-auto'>
           <div className='image-contain'>

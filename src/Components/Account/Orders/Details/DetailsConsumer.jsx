@@ -6,6 +6,22 @@ import { Card, CardBody, Col, Row } from 'reactstrap';
 const DetailsConsumer = ({ data }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
+
+  const renderPaymentMethod = (method) => {
+    switch (method) {
+      case 'cash':
+        return 'Paiement en espèces (cash)';
+      case 'bank':
+        return 'Paiement par virement ou versement bancaire';
+      case 'd17':
+        return 'Paiement par l’application D17';
+      case 'click_to_pay':
+        return 'Paiement en ligne par Carte Bancaire';
+      default:
+        return 'Méthode de paiement inconnue';
+    }
+  };
+
   return (
     <>
       <Row>
@@ -15,7 +31,7 @@ const DetailsConsumer = ({ data }) => {
               <h3 className='fw-semibold mb-3'>{t('ConsumerDetails')}</h3>
               <div className='customer-detail tracking-wrapper'>
                 <ul className='row g-3'>
-                  {data?.billing_address ? (
+                  {/* {data?.billing_address ? (
                     <li className='col-sm-6'>
                       <label>{t('BillingAddress')}:</label>
                       <h4>
@@ -25,8 +41,8 @@ const DetailsConsumer = ({ data }) => {
                         {t('Phone')} : +{data.shipping_address.country_code} {data.billing_address.phone}
                       </h4>
                     </li>
-                  ) : null}
-                  {data?.shipping_address ? (
+                  ) : null} */}
+                  {/* {data?.shipping_address ? (
                     <li className='col-sm-6'>
                       <label>{t('ShippingAddress')}:</label>
                       <h4>
@@ -36,18 +52,18 @@ const DetailsConsumer = ({ data }) => {
                         {t('Phone')} : +{data.shipping_address.country_code} {data.shipping_address.phone}
                       </h4>
                     </li>
-                  ) : null}
-                  {data?.delivery_description ? (
+                  ) : null} */}
+                  {/* {data?.delivery_description ? (
                     <li className='col-sm-6'>
                       <label>{t('DeliverySlot')}:</label>
                       <h4>{data.delivery_description}</h4>
                     </li>
-                  ) : null}
+                  ) : null} */}
                   {data?.payment_method ? (
-                    <li className='col-3'>
+                    <li className=''>
                       <label>{t('PaymentMode')}:</label>
-                      <div className='d-flex align-items-center gap-2'>
-                        <h4>{data.payment_method}</h4>
+                      <div className='d-flex align-items-center'>
+                        <h4>{renderPaymentMethod(data.payment_method)}</h4>
                       </div>
                     </li>
                   ) : null}
@@ -64,9 +80,6 @@ const DetailsConsumer = ({ data }) => {
                 <ul>
                   <li>
                     {t('Subtotal')} <span>{data?.amount ? data?.amount : 0}</span>
-                  </li>
-                  <li>
-                    {t('Shipping')} <span>{data?.shipping_total ? data?.shipping_total : 0}</span>
                   </li>
                   <li>
                     {t('Tax')} <span>{data?.tax_total ? data?.tax_total : 0}</span>

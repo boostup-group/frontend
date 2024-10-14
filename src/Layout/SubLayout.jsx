@@ -34,7 +34,7 @@ const SubLayout = ({ children }) => {
       let value =
         themeOption?.general?.site_title && themeOption?.general?.site_tagline
           ? `${themeOption?.general?.site_title} | ${themeOption?.general?.site_tagline}`
-          : 'FastKart Marketplace: Where Vendors Shine Together';
+          : 'Netflix Tunisie';
       document.title = value;
       clearTimeout(timer);
     }
@@ -49,11 +49,11 @@ const SubLayout = ({ children }) => {
       {children}
       <TapTop />
       <MainFooter />
-      <CookiesComponent />
+      {/* <CookiesComponent /> */}
       <StickyCompare />
       <RecentPurchase />
-      {!isNewsLetter && <NewsLetterModal />}
-      <ExitModal />
+      {/* {!isNewsLetter && <NewsLetterModal />} */}
+      {/* <ExitModal /> */}
     </>
   );
 };

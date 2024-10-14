@@ -11,8 +11,10 @@ const FooterUseFul = ({ footerMenu, setFooterMenu }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
 
+  console.log('footer links:',themeOption?.footer?.useful_link);
+
   return (
-    <Col xl={2} lg={3} md={4} sm={6}>
+    <Col >
       <div className={`footer-title ${footerMenu == 'usefull' ? 'show' : ''}`} onClick={() => setFooterMenu((prev) => (prev !== 'usefull' ? 'usefull' : ''))}>
         <h4>{t('UsefulLinks')}</h4>
       </div>
@@ -21,8 +23,8 @@ const FooterUseFul = ({ footerMenu, setFooterMenu }) => {
           {themeOption?.footer?.useful_link?.length > 0 ? (
             themeOption?.footer?.useful_link?.map((elem, i) => (
               <li key={i}>
-                <Link href={`/${i18Lang}/${elem.value}`} className='text-content text-capitalize'>
-                  {elem.name}
+                <Link href={`/${i18Lang}/${elem}`} className='text-red text-content text-capitalize'>
+                  {elem}
                 </Link>
               </li>
             ))

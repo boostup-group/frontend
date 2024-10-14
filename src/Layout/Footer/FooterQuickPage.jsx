@@ -21,8 +21,8 @@ const FooterQuickPage = ({ footerMenu, setFooterMenu }) => {
           {themeOption?.footer?.help_center?.length > 0 ? (
             themeOption?.footer?.help_center?.map((elem, i) => (
               <li key={i}>
-                <Link href={`/${i18Lang}/${elem.value}`} className='text-content text-capitalize'>
-                  {elem.name}
+                <Link href={`/${i18Lang}/${elem}`} className='text-content text-capitalize'>
+                  {elem}
                 </Link>
               </li>
             ))

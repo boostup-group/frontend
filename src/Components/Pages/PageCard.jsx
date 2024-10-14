@@ -6,10 +6,11 @@ import { useQuery } from '@tanstack/react-query';
 
 const PageCard = ({ params }) => {
   const { data: Page, isLoading, refetch } = useQuery([params], () => request({ url: `${PageAPI}/slug/${params}` }), { enabled: false, refetchOnWindowFocus: false, select: (res) => res?.data });
+  // console.log(Page.content);
   useEffect(() => {
     params && refetch();
   }, [params]);
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return <div dangerouslySetInnerHTML={{ __html: Page?.content }} />;
 };
 

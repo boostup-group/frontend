@@ -50,7 +50,7 @@ const CollectionAttributes = ({ attributeAPIData, filter, setFilter }) => {
                         <Input className='checkbox_animated' type='checkbox' value={value?.slug} id={value?.value} checked={checkAttribute(value?.slug)} onChange={applyAttribute} />
                         <Label className='form-check-label color-label-box' htmlFor={value?.value}>
                           {attribute?.style === 'color' && <div className='color-box' style={{ backgroundColor: value?.hex_color }}></div>}
-                          <span className='name'>{value?.value}</span>
+                          <span className='name'>{value?.value} Mois</span>
                         </Label>
                       </div>
                     </li>

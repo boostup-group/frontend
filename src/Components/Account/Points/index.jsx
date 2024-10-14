@@ -10,7 +10,7 @@ import PointTopBar from './PointTopBar';
 const AccountPoints = () => {
   return (
     <>
-      <Breadcrumb title={'Point'} subNavigation={[{ name: 'Point' }]} />
+      {/* <Breadcrumb title={'Point'} subNavigation={[{ name: 'Point' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'point'} />
 

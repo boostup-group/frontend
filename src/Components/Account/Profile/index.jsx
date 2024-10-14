@@ -9,7 +9,7 @@ import ProfileContent from './ProfileContent';
 const AccountProfile = () => {
   return (
     <>
-      <Breadcrumb title={'UserProfile'} subNavigation={[{ name: 'UserProfile' }]} />
+      {/* <Breadcrumb title={'UserProfile'} subNavigation={[{ name: 'UserProfile' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'profile'} />
 

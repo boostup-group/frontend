@@ -7,7 +7,7 @@ const BlogImageDetails = ({ Blog }) => {
   const { themeOption } = useContext(ThemeOptionContext);
   return (
     <div className='blog-image-contain'>
-      <h2>{Blog?.title}</h2>
+      {/* <h2>{Blog?.title}</h2> */}
       <ul className='contain-comment-list'>
         {themeOption?.blog?.blog_author_enable && (
           <li>

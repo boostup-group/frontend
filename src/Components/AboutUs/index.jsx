@@ -35,10 +35,10 @@ const AboutUsContent = () => {
           themeOption?.about_us?.clients?.content?.length &&
           (themeOption?.about_us?.clients?.sub_title ||
             themeOption?.about_us?.clients?.title) && <ClientSection />}
-        {themeOption?.about_us?.team?.status &&
+        {/* {themeOption?.about_us?.team?.status &&
           themeOption?.about_us?.team?.members?.length &&
           (themeOption?.about_us?.team?.sub_title ||
-            themeOption?.about_us?.team?.title) && <CreativeTeam />}
+            themeOption?.about_us?.team?.title) && <CreativeTeam />} */}
         {themeOption?.about_us?.testimonial?.status &&
           themeOption?.about_us?.testimonial?.reviews?.length &&
           (themeOption?.about_us?.testimonial?.sub_title ||

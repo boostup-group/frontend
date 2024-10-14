@@ -83,7 +83,7 @@ const HeaderCartBottom = ({ modal, setModal, shippingFreeAmt, shippingCal }) => 
             <Link href={`/${i18Lang}/cart`} className='btn btn-sm cart-button' onClick={() => setCartCanvas('')}>
                 {t('ViewCart')}
               </Link>
-              <Link href={isAuth ? `/${i18Lang}/checkout` : `/${i18Lang}/auth/login`} className='btn btn-sm cart-button theme-bg-color text-white' onClick={() => setCartCanvas('')}>
+              <Link href={`/${i18Lang}/checkout`} className='btn btn-sm cart-button theme-bg-color text-white' onClick={() => setCartCanvas('')}>
                 {t('Checkout')}
               </Link>
             </div>

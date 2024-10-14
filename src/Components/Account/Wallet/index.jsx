@@ -9,7 +9,7 @@ import WalletCard from './WalletCard';
 const WalletContent = () => {
   return (
     <>
-      <Breadcrumb title={'Wallet'} subNavigation={[{ name: 'Wallet' }]} />
+      {/* <Breadcrumb title={'Wallet'} subNavigation={[{ name: 'Wallet' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'wallet'} />
 

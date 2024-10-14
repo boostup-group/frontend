@@ -29,14 +29,14 @@ const BrowserFaq = () => {
     select: (data) => data?.data?.data,
   });
 
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <>
       {/* <Breadcrumb title={`Faq's`} subNavigation={[{ name: `Faq's` }]} /> */}
       {data?.length > 0 ? (
         <section className='faq-box-contain section-b-space mb-8'>
           <div className="container flex flex-col items-center px-4 mx-auto mb-16">
-            <p className="text-base lg:text-2xl font-medium">
+            <p className="text-[#E50914] lg:text-2xl font-medium">
               {t('faqDescription')}
             </p>
             <h1 className="text-3xl lg:text-5xl font-bold mt-3">
@@ -50,7 +50,7 @@ const BrowserFaq = () => {
                   <p>{t('faqDescription')}</p>
                 </div>
               </Col> */}
-            <Col className='lg:px-80 md:px-4'>
+            <Col className='lg:px-[65px] md:px-4'>
               <div className='faq-accordion'>
                 <Accordion open={open} toggle={toggle}>
                   {data?.map((faq, i) => (

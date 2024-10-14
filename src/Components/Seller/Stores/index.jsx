@@ -20,7 +20,7 @@ const SellerStoreContent = () => {
   const isSellerLayout = querySellerLayout ? querySellerLayout : themeOption?.seller?.store_layout;
   return (
     <>
-      <Breadcrumb title={'Seller'} subNavigation={[{ name: 'Seller' }]} />
+      {/* <Breadcrumb title={'Seller'} subNavigation={[{ name: 'Seller' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'seller-grid-section section-b-space', row: 'g-4' }} customCol={true}>
         {isSellerLayout == 'basic_store' ? <StoreCard data={data} isLoading={isLoading} setPage={setPage}  /> : <ClassicStoreCard data={data} isLoading={isLoading} setPage={setPage}/>}
       </WrapperComponent>

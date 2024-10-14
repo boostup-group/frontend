@@ -47,4 +47,39 @@ const useHandleLogin = () => {
   );
 };
 
+
+
+const LoginHandleGuest = (responseData, refetch,compareRefetch) => {
+  if (responseData.status === 200 || responseData.status === 201) {
+    Cookies.set('uat', responseData.data?.access_token, { path: '/', expires: new Date(Date.now() + 24 * 60 * 6000) });
+    const ISSERVER = typeof window === 'undefined';
+    if (typeof window !== 'undefined') {
+      Cookies.set('account', JSON.stringify(responseData.data));
+      localStorage.setItem('account', JSON.stringify(responseData.data));
+    }
+    refetch();
+    compareRefetch()
+    // window.location.replace(`/${i18Lang}/account/dashboard`);
+  }
+};
+
+
+export const useHandleLoginGuest = () => {
+  const { i18Lang } = useContext(I18NextContext);
+  const { refetch } = useContext(AccountContext);
+  const { refetch:compareRefetch } = useContext(CompareContext);
+  const router = useRouter();
+  return useMutation(
+    (data) =>
+      request({
+        url: LoginAPI,
+        method: 'post',
+        data,
+      }),
+    {
+      onSuccess: (responseData) => LoginHandleGuest(responseData, refetch,compareRefetch),
+    },
+  );
+};
+
 export default useHandleLogin;

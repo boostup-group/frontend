@@ -24,6 +24,15 @@ const ThemeOptionProvider = (props) => {
       setThemeOption(data?.options);
     }
   }, [isLoading]);
+
+  document.documentElement.style.setProperty('--theme-color', '#E50914');
+  // useEffect(() => {
+  //   document.documentElement.style.setProperty('--theme-color', '#E50914');
+  //   refetch();
+  //   // return () => {
+  //   //   document.documentElement.style.removeProperty('--theme-color');
+  //   // };
+  // }, []);
   return (
     <>
       <ThemeOptionContext.Provider

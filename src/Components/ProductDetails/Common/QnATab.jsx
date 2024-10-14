@@ -33,7 +33,7 @@ const QnATab = ({ productState }) => {
       setModal('');
     }
   });
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <>
       <div className='post-question-box'>

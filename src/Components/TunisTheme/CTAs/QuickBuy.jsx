@@ -32,11 +32,11 @@ const QuickBuy = ({ dataAPI }) => {
 
   return (
     <div class="relative container mx-auto mb-16">
-      <div class="mx-auto px-8 md:px-16 py-12 sm:py-20 bg-[#FB8C92] rounded-md">
+      <div class="mx-auto px-8 md:px-16 py-12 sm:py-20 bg-[#E50914] rounded-md">
         <div class="flex flex-wrap -mx-4 align-items-center">
           <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
             <div class="max-w-lg mx-auto">
-              <h4 class="text-4xl sm:text-5xl text-black font-semibold">Sign up for our newsletter</h4>
+              <h4 class="lg:text-6xl sm:text-5xl text-white font-bold">Sign up for our newsletter</h4>
             </div>
           </div>
           <div class="w-full lg:w-1/2 px-4">

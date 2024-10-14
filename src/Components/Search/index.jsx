@@ -37,7 +37,7 @@ const SearchModule = () => {
     refetch();
     router.push(`/${i18Lang}/search?search=${searchState}`);
   };
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   const onChangeHandler = (value) => {
     if (!value) {
       router.push(`/${i18Lang}/search?search=`);
@@ -46,7 +46,7 @@ const SearchModule = () => {
   };
   return (
     <>
-      <Breadcrumb title={'Search'} subNavigation={[{ name: 'Search' }]} />
+      {/* <Breadcrumb title={'Search'} subNavigation={[{ name: 'Search' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'search-section', col: 'mx-auto' }} colProps={{ xxl: 6, xl: 8 }}>
         <div className='title d-block text-center'>
           <h2>{t('Searchforproducts')}</h2>

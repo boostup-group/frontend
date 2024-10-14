@@ -9,10 +9,11 @@ const ProductDetails = ({ productState }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   const { convertCurrency } = useContext(SettingContext);
+  const rating = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
   return (
     <>
       <CustomerOrderCount productState={productState} />
-      <h2 className='name'>{productState?.selectedVariation?.name ?? productState?.product?.name}</h2>
+      <h1 className='name text-2xl'>{productState?.product?.name}</h1>
       <div className='price-rating'>
         <h3 className='theme-color price'>
           {productState?.selectedVariation?.sale_price ? convertCurrency(productState?.selectedVariation?.sale_price) : convertCurrency(productState?.product?.sale_price)}
@@ -24,9 +25,9 @@ const ProductDetails = ({ productState }) => {
           ) : null}
         </h3>
         <div className='product-rating custom-rate'>
-          <ProductBox1Rating totalRating={productState?.selectedVariation?.rating_count ?? productState?.product?.rating_count} />
+          <ProductBox1Rating totalRating={rating/15} />
           <span className='review'>
-            {productState?.selectedVariation?.reviews_count || productState?.product?.reviews_count || 0} {t('Review')}
+            {rating} {t('Review')}
           </span>
         </div>
       </div>

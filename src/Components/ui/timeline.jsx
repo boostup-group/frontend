@@ -29,11 +29,11 @@ export const Timeline = ({
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}>
       <div className="container flex flex-col items-center px-4 mx-auto mb-6">
-        <p className="text-base lg:text-2xl font-medium">
-          Simple and Easy
+        <p className="text-[#E50914] lg:text-2xl font-medium">
+        Simple et Facile
         </p>
         <h1 className="text-3xl lg:text-5xl font-bold mt-3">
-          Our Process
+          Comment Faire
         </h1>
       </div>
       <div class="container lg:px-5 mx-auto">
@@ -45,7 +45,7 @@ export const Timeline = ({
                 <div
                   className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                   <div
-                    className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+                    className="h-4 w-4 rounded-full bg-[#E50914] dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
                 </div>
                 <h3
                   className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
@@ -72,7 +72,7 @@ export const Timeline = ({
                 height: heightTransform,
                 opacity: opacityTransform,
               }}
-              className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full" />
+              className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-[#E50914] via-[#e5091431] to-transparent from-[0%] via-[10%] rounded-full" />
           </div>
         </div>
       </div>

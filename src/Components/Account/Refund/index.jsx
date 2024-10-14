@@ -10,7 +10,7 @@ import RefundTable from './RefundTable';
 const AccountRefund = () => {
   return (
     <>
-      <Breadcrumb title={'Point'} subNavigation={[{ name: 'Point' }]} />
+      {/* <Breadcrumb title={'Point'} subNavigation={[{ name: 'Point' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'refund'} />
 

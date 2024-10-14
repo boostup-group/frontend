@@ -18,9 +18,13 @@ const HeaderCategory = ({ customClass, icon, dropDownClass }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   const { themeOption } = useContext(ThemeOptionContext);
+
   const filteredCategories = useMemo(() => {
-    return categoryData?.filter((elem) => themeOption?.header?.category_ids?.includes(elem.id));
-  });
+    return categoryData?.filter((elem) =>
+      themeOption?.header?.category_ids?.includes(elem.id)
+    );
+  }, [categoryData, themeOption]);
+
   return (
     <Col xs={12}>
       <div className={`${customClass ? customClass : 'header-nav'}`}>
@@ -50,9 +54,10 @@ const HeaderCategory = ({ customClass, icon, dropDownClass }) => {
                 ))
               ) : (
                 <li className='onhover-category-list'>
-                  <a className='category-name'>
+                  {/* Provide a default link or leave it non-clickable */}
+                  <Link href="/not-found" className='category-name'>
                     <h6>{'No Category Found'}</h6>
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>

@@ -64,3 +64,63 @@
     @apply bg-background text-foreground;
   }
 }
+
+.blog-detail-contain h1 {
+  font-size: 2.5rem;  /* Large heading size */
+  font-weight: bold;  /* Bold font */
+  color: #2d3748;     /* Dark gray */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+.blog-detail-contain h2 {
+  font-size: 2.25rem;  /* Slightly smaller than h1 */
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.875rem;
+}
+
+.blog-detail-contain h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.75rem;
+}
+
+.blog-detail-contain h4 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.625rem;
+}
+
+.blog-detail-contain h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.blog-detail-contain h6 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.375rem;
+}
+
+.product-standard .no-arrow .slick-slider .slick-list {
+  display: flex;
+}
+
+.product-standard .no-arrow .slick-slider .slick-list .slick-track {
+  display: contents;
+}
+
+.product-box .label-tag {
+  z-index: 0 !important;
+}
+
+/* Custom Tailwind CSS */
+.no-children > a::before {
+  display: none;
+}
+

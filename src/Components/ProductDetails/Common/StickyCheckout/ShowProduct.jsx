@@ -21,7 +21,7 @@ const ShowProduct = ({ productState, setProductState }) => {
                   name={productState?.selectedVariation ? productState?.selectedVariation?.name : productState?.product?.name}
                 />
                 <div className='content'>
-                  <h5>{productState?.selectedVariation ? productState?.selectedVariation?.name : productState?.product?.name}</h5>
+                  <h5>{productState?.product?.name} {productState?.selectedVariation?.name} mois</h5>
                   <h6>
                     {productState?.selectedVariation ? convertCurrency(productState?.selectedVariation?.sale_price) : convertCurrency(productState?.product?.sale_price)}
                     {productState?.selectedVariation?.discount ?? productState?.product?.discount ? (

@@ -9,7 +9,7 @@ const Loader = () => {
     <div className='loader-wrapper'>
       <div>
         <div className='loader'></div>
-        <h3>{t('Loading')}</h3>
+        {/* <h3>{t('Loading')}</h3> */}
       </div>
     </div>
   );

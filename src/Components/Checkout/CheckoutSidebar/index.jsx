@@ -11,6 +11,7 @@ import PointWallet from './PointWallet';
 import I18NextContext from '@/Helper/I18NextContext';
 import ApplyCoupon from './ApplyCoupon';
 import PlaceOrder from './PlaceOrder';
+import Cookies from 'js-cookie';
 
 const CheckoutSidebar = ({ values, setFieldValue }) => {
   const [storeCoupon, setStoreCoupon] = useState();
@@ -18,8 +19,14 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
   const { cartProducts } = useContext(CartContext);
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
+
+  const isAuth = Cookies.get('uat');
+
+
   const { data, mutate, isLoading } = useCreate(CheckoutAPI, false, false, true, false, false);
   // Submitting data on Checkout
+
+  // toast unauthenticated produced error
   useEffect(() => {
     if (values['delivery_description'] && values['payment_method']) {
       values['variation_id'] = '';
@@ -34,6 +41,12 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
     }
   }, [values['payment_method'], values['delivery_description'], values['points_amount'], values['wallet_balance']]);
 
+    // Calculate subtotal and total
+    // const subtotal = values.products.reduce((total, product) => {
+    //   console.log('here', product.sub_total);
+    // }, 0);
+
+  // console.log('here values', values['products'].sub_total);
   return (
     <Col xxl='4' xl='5'>
       <Card className='pos-detail-card'>
@@ -45,12 +58,13 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
               <h4>{t('Subtotal')}</h4>
               <h4 className='price'>{data?.data?.total?.sub_total ? convertCurrency(data?.data?.total?.sub_total) : t(`Notcalculatedyet`)}</h4>
             </li>
-            <li>
+            {/* <li>
               <h4>{t('Shipping')}</h4>
               <h4 className='price'>{data?.data?.total?.shipping_total >= 0 ? convertCurrency(data?.data?.total?.shipping_total) : t(`Notcalculatedyet`)}</h4>
-            </li>
+            </li> */}
             <li>
               <h4>{t('Tax')}</h4>
+              
               <h4 className='price'>{data?.data?.total?.tax_total ? convertCurrency(data?.data?.total?.tax_total) : t(`Notcalculatedyet`)}</h4>
             </li>
 

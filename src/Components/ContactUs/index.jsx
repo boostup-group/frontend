@@ -9,12 +9,12 @@ import Breadcrumb from '../Common/Breadcrumb';
 const ContactUsContent = () => {
   return (
     <>
-      <Breadcrumb title={'ContactUs'} subNavigation={[{ name: 'ContactUs' }]} />
+      {/* <Breadcrumb title={'ContactUs'} subNavigation={[{ name: 'ContactUs' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'contact-box-section', row: 'g-lg-5 g-3' }} customCol={true}>
         <ContactLeftSideBox />
         <ContactRightSidebar />
       </WrapperComponent>
-      <MapSection />
+      {/* <MapSection /> */}
     </>
   );
 };

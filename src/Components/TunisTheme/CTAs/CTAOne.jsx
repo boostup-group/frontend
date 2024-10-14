@@ -2,13 +2,13 @@ import React from 'react'
 
 const CTAOne = () => {
     return (
-            <section class="relative mt-8 overflow-hidden">
+            <section class="relative mb-8 lg:mt-[-150px] overflow-hidden">
                 <div class="container mx-auto px-4">
-                    <div class="p-16 bg-[#FB8C92] rounded-md">
-                        <div class="flex flex-wrap items-center justify-between -m-6">
+                    <div class="p-16 bg-[#E50914] rounded-md">
+                        <div class="flex flex-wrap items-center justify-between -m-6 lg:px-20 sm:px-0">
                             <div class="w-full md:w-1/2 p-6">
-                                <div class="md:max-w-full">
-                                    <h2 class="font-bold text-4xl sm:text-xl text-gray-900">Ready to grow your online business?</h2>
+                                <div class="md:max-w-full flex justify-center">
+                                    <h2 class="font-bold lg:text-6xl sm:text-xl text-white">Ready to grow your online business?</h2>
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 p-6">

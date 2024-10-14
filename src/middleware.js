@@ -39,7 +39,7 @@ export async function middleware(request) {
         return NextResponse.redirect(new URL(`/`, request.url));
     }
     
-    const protectedRoutes = [`/${lng}/account/dashboard`, `/${lng}/account/notification`, `/${lng}/account/wallet`, `/${lng}/account/bank-details`, `/${lng}/account/bank-details`, `/${lng}/account/point`, `/${lng}/account/refund`, `/${lng}/account/order`, `/${lng}/account/addresses`, `/${lng}/wishlist`, `/${lng}/compare`, `/${lng}/checkout`]
+    const protectedRoutes = [`/${lng}/account/dashboard`, `/${lng}/account/notification`, `/${lng}/account/wallet`, `/${lng}/account/bank-details`, `/${lng}/account/bank-details`, `/${lng}/account/point`, `/${lng}/account/refund`, `/${lng}/account/order`, `/${lng}/account/addresses`, `/${lng}/wishlist`, `/${lng}/compare`]
     if (protectedRoutes.includes(path) && !request.cookies.has("uat")) {
         return NextResponse.redirect(new URL(`/${lng}/auth/login`, request.url));
     }

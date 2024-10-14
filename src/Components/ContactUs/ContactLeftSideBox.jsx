@@ -57,7 +57,7 @@ const ContactLeftSideBox = () => {
                   </div>
                 </Col>
 
-                <Col xxl={6} lg={12} sm={6}>
+                {/* <Col xxl={6} lg={12} sm={6}>
                   <div className='contact-detail-box'>
                     <div className='contact-icon'>
                       <RiMapPin2Line />
@@ -85,7 +85,8 @@ const ContactLeftSideBox = () => {
                       <p>{themeOption?.contact_us?.detail_4?.text}</p>
                     </div>
                   </div>
-                </Col>
+                </Col> */}
+                
               </Row>
             </div>
           </Col>

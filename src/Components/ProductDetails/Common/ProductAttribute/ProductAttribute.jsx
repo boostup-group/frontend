@@ -153,7 +153,7 @@ const ProductAttribute = ({ productState, setProductState, stickyAddToCart }) =>
             <>
               <div className='product-title'>
                 <h4>
-                  {elem?.name} : {elem?.selected_value}
+                  {elem?.name} : {elem?.selected_value} <span>Mois</span>
                 </h4>
               </div>
               {elem?.style == 'radio' ? (

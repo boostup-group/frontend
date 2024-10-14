@@ -9,7 +9,7 @@ import Details from './Details';
 const OrderDetailsContain = ({ params }) => {
   return (
     <>
-      <Breadcrumb title={'Orders'} subNavigation={[{ name: 'Orders' }]} />
+      {/* <Breadcrumb title={'Orders'} subNavigation={[{ name: 'Orders' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'order'} />
         <Col xxl={9} lg={8}>

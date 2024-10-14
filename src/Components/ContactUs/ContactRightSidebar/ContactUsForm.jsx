@@ -13,7 +13,7 @@ import { RiChat2Fill, RiMailFill, RiSmartphoneLine, RiUserFill } from 'react-ico
 const ContactUsForm = () => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
-  const { mutate, isLoading } = useCreate(ContactUsAPI, false, `/${i18Lang}/paris`, 'No');
+  const { mutate, isLoading } = useCreate(ContactUsAPI, false, `/`, 'No');
   return (
     <Formik
       initialValues={{ name: '', email: '', phone: '', subject: '', message: '' }}

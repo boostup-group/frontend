@@ -46,7 +46,7 @@ const FooterLogoContent = () => {
     setLogo(tempLogo);
   }, [pathName, i18Lang, themeOption?.logo?.header_logo?.original_url, isImage, logoImage]);
   return (
-    <Col xl={3} sm={6}>
+    <Col>
       <div className='footer-logo'>
         <div className='theme-logo'>
           <Link href='/'>
@@ -57,7 +57,7 @@ const FooterLogoContent = () => {
         <div className='footer-logo-contain'>
           {themeOption?.footer?.footer_about && <p>{themeOption?.footer?.footer_about}</p>}
 
-          <ul className='address'>
+          {/* <ul className='address'>
             {themeOption?.footer?.about_address && (
               <li>
                 <RiHomeLine />
@@ -74,7 +74,7 @@ const FooterLogoContent = () => {
                 </Link>
               </li>
             )}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </Col>

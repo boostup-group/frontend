@@ -25,7 +25,7 @@ const NotificationData = () => {
       mutate({ _method: 'PUT' });
     };
   }, []);
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <>
       <AccountHeading title='Notifications' />

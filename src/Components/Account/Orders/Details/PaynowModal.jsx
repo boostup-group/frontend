@@ -18,7 +18,7 @@ const PaynowModal = ({ modal, setModal, params }) => {
   const { settingData } = useContext(SettingContext);
   const { mutate, isLoading } = useCreate(RePaymentAPI, false, false, 'No', (resDta) => {
     if (resDta?.status == 200 || resDta?.status == 201) {
-      if (resDta?.data?.['payment_method'] == 'cod') {
+      if (resDta?.data?.['payment_method'] == 'cod' || resDta?.data?.['payment_method'] == 'bank' || resDta?.data?.['payment_method'] == 'cash') {
         router.push(`/account/order/${resDta?.data?.order_number}`);
       } else {
         window.open(resDta?.data?.url, '_self');

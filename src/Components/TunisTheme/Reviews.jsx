@@ -2,68 +2,77 @@
 
 import Image from "next/image";
 
-import avatar from "../../../public/assets/avatar.jpg";
+import oussemaAvatar from "../../../public/assets/oussema.png";
+import dhekraAvatar from "../../../public/assets/dhekra.png";
+import samehAvatar from "../../../public/assets/sameh.jpg";
+import faresAvatar from "../../../public/assets/fares.jpg";
+import hichemAvatar from "../../../public/assets/hichem.png";
+
 import { twMerge } from "tailwind-merge";
 import { motion } from 'framer-motion';
 import React from "react";
 
 const reviews = [
     {
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint maxime ipsa laudantium libero id illum temporibus dolorum rem? Odit in voluptate ipsum pariatur suscipit repellat, deleniti ratione aspernatur accusantium.",
-        imageSrc: avatar.src,
-        name: "John Doe",
-        username: "@johndoe",
+        text: "Votre partenaire malen borchani excelle en communication et en relationnel, la qualité, le traitement et le service sont toujours au point, ce qui fait que nous renouvelons nos abonnement toujours via votre service.",
+        imageSrc: oussemaAvatar.src,
+        name: "Oussema",
+        username: "58 68x xxx",
     },
     {
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores deleniti molestiae vero dolorem blanditiis consequuntur id, iure est ut. Eius modi reiciendis quidem non nulla commodi, fugiat in quibusdam dolorum.",
-        imageSrc: avatar.src,
-        name: "Man Deep",
-        username: "@mandeep",
-    }, {
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint maxime ipsa laudantium libero id illum temporibus dolorum rem? Odit in voluptate ipsum pariatur suscipit repellat, deleniti ratione aspernatur accusantium.",
-        imageSrc: avatar.src,
-        name: "John Doe",
-        username: "@johndoe",
+        text: "Merciii infiniment pour votre professionnalisme et votre service parfait , je suis reconnaissante à votre accueil chaleureux et la réactivité ❤️ une expérience parfaite et un bon plan à recommander vivement ❤️❤️ netflix And chill 🎥",
+        imageSrc: dhekraAvatar.src,
+        name: "Dhekra",
+        username: "28 65x xxx",
+    }, 
+    {
+        text: "Merci pour le merveilleux service. Je n'ai aucun problème avec les services. Merci beaucoup.",
+        imageSrc: samehAvatar.src,
+        name: "Sameh",
+        username: "56 26x xxx",
     },
     {
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores deleniti molestiae vero dolorem blanditiis consequuntur id, iure est ut. Eius modi reiciendis quidem non nulla commodi, fugiat in quibusdam dolorum.",
-        imageSrc: avatar.src,
-        name: "Man Deep",
-        username: "@mandeep",
-    }, {
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint maxime ipsa laudantium libero id illum temporibus dolorum rem? Odit in voluptate ipsum pariatur suscipit repellat, deleniti ratione aspernatur accusantium.",
-        imageSrc: avatar.src,
-        name: "John Doe",
-        username: "@johndoe",
+        text: "Mon avis : excellent service , toujours à l’écoute du client , prise en charge immédiate des réclamations, un grand merci à Malek et Akrem",
+        imageSrc: faresAvatar.src,
+        name: "Fares",
+        username: "98 60x xxx",
     },
     {
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores deleniti molestiae vero dolorem blanditiis consequuntur id, iure est ut. Eius modi reiciendis quidem non nulla commodi, fugiat in quibusdam dolorum.",
-        imageSrc: avatar.src,
-        name: "Man Deep",
-        username: "@mandeep",
-    }, {
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint maxime ipsa laudantium libero id illum temporibus dolorum rem? Odit in voluptate ipsum pariatur suscipit repellat, deleniti ratione aspernatur accusantium.",
-        imageSrc: avatar.src,
-        name: "John Doe",
-        username: "@johndoe",
+        text: "Bonjour Akrem&Malek, Vous êtes simplement les Meilleurs fournisseurs de Netflix avec qui je me suis abonné. Je recommande vivement et les yeux fermés. Bonne continuation Cordialement Hichem",
+        imageSrc: hichemAvatar.src,
+        name: "Hichem",
+        username: "53 53x xxx",
     },
     {
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores deleniti molestiae vero dolorem blanditiis consequuntur id, iure est ut. Eius modi reiciendis quidem non nulla commodi, fugiat in quibusdam dolorum.",
-        imageSrc: avatar.src,
-        name: "Man Deep",
-        username: "@mandeep",
-    }, {
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sint maxime ipsa laudantium libero id illum temporibus dolorum rem? Odit in voluptate ipsum pariatur suscipit repellat, deleniti ratione aspernatur accusantium.",
-        imageSrc: avatar.src,
-        name: "John Doe",
-        username: "@johndoe",
+        text: "Votre partenaire malen borchani excelle en communication et en relationnel, la qualité, le traitement et le service sont toujours au point, ce qui fait que nous renouvelons nos abonnement toujours via votre service.",
+        imageSrc: oussemaAvatar.src,
+        name: "Oussema",
+        username: "58 68x xxx",
     },
     {
-        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores deleniti molestiae vero dolorem blanditiis consequuntur id, iure est ut. Eius modi reiciendis quidem non nulla commodi, fugiat in quibusdam dolorum.",
-        imageSrc: avatar.src,
-        name: "Man Deep",
-        username: "@mandeep",
-    }
+        text: "Merciii infiniment pour votre professionnalisme et votre service parfait , je suis reconnaissante à votre accueil chaleureux et la réactivité ❤️ une expérience parfaite et un bon plan à recommander vivement ❤️❤️ netflix And chill 🎥",
+        imageSrc: dhekraAvatar.src,
+        name: "Dhekra",
+        username: "28 65x xxx",
+    }, 
+    {
+        text: "Merci pour le merveilleux service. Je n'ai aucun problème avec les services. Merci beaucoup.",
+        imageSrc: samehAvatar.src,
+        name: "Sameh",
+        username: "56 26x xxx",
+    },
+    {
+        text: "Mon avis : excellent service , toujours à l’écoute du client , prise en charge immédiate des réclamations, un grand merci à Malek et Akrem",
+        imageSrc: faresAvatar.src,
+        name: "Fares",
+        username: "98 60x xxx",
+    },
+    {
+        text: "Bonjour Akrem&Malek, Vous êtes simplement les Meilleurs fournisseurs de Netflix avec qui je me suis abonné. Je recommande vivement et les yeux fermés. Bonne continuation Cordialement Hichem",
+        imageSrc: hichemAvatar.src,
+        name: "Hichem",
+        username: "53 53x xxx",
+    },
 ];
 
 const firstColumn = reviews.slice(0, 3);
@@ -115,11 +124,11 @@ const Reviews = () => {
     return (
         <section class="bg-white overflow-hidden">
             <div class="container flex flex-col items-center px-4 mx-auto mb-6">
-                <p className="text-base lg:text-2xl font-medium">
-                    What Our Clients Say
+                <p className="text-[#E50914] lg:text-2xl font-medium">
+                    Ce Que Disent Nos Clients
                 </p>
                 <h1 className="text-3xl lg:text-5xl font-bold mt-3">
-                    Reviews
+                    Avis Clients
                 </h1>
                 <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black,black,transparent)] max-h-[738px] overflow-hidden">
                     <ReviewsColumn reviews={firstColumn} duration={15} />

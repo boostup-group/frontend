@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { Col, Row } from 'reactstrap';
 import Slider from 'react-slick';
 import CustomHeading from '@/Components/Common/CustomHeading';

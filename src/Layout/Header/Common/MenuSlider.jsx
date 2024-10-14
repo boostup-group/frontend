@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Col, Row } from 'reactstrap';
 import ProductBox1 from '@/Components/Common/ProductBox/ProductBox1/ProductBox1';
@@ -10,18 +10,47 @@ import BlogContext from '@/Helper/BlogContext';
 import I18NextContext from '@/Helper/I18NextContext';
 import bannerImage from '../../../../public/assets/images/mega-menu.png';
 import banner2Image from '../../../../public/assets/images/mega-menu2.png';
-import ProductContext from '@/Helper/ProductContext';
 import NoDataFound from '@/Components/Common/NoDataFound';
 
 const MenuSlider = ({ menu }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { filteredProduct } = useContext(ProductIdsContext);
-  const { productAPIData } = useContext(ProductContext);
   const { blogState } = useContext(BlogContext);
+
+  const [productAPIData, setProductAPIData] = useState()
+
+  const fetchProductData = async () => {
+    try {
+      const response = await fetch('https://api.netflixtunisie.com/api/product', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setProductAPIData(data);
+      console.log('Product Data:', data);
+    } catch (error) {
+      console.error('Error fetching product data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProductData();
+  }, []);
+
+
+  console.log(productAPIData?.data)
+
   return (
     <>
       {menu?.slider === 'product' && (
-        <Col xl={6} className='dropdown-column d-xl-block d-none'>
+        <Col xl={9} className='dropdown-column d-xl-block d-none'>
           {filteredProduct?.length > 0 || productAPIData?.data?.length > 0 ? (
             <div className='menu-product-slider'>
               <Row>

@@ -28,7 +28,7 @@ const MainProductContent = ({ productState, setProductState }) => {
             <ProductDeliveryInformation productState={productState} />
           ) : null}
           <PaymentOtions productState={productState} />
-          {themeOption?.product?.social_share && productState?.product?.social_share ? <ProductSocial productState={productState} /> : null}
+          {/* {themeOption?.product?.social_share && productState?.product?.social_share ? <ProductSocial productState={productState} /> : null} */}
         </div>
       </Col>
       {productState?.product?.cross_sell_products?.length > 0 && (

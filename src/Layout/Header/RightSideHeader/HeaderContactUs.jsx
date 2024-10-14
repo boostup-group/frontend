@@ -8,15 +8,18 @@ const HeaderContactUs = () => {
   const { themeOption } = useContext(ThemeOptionContext);
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
+  
+  const supportNumber = themeOption?.header?.support_number;
+
   return (
     <li className='right-side'>
-      <a className='delivery-login-box'>
+      <a className='delivery-login-box' href={`tel:${supportNumber}`}>
         <div className='delivery-icon'>
           <RiPhoneLine />
         </div>
         <div className='delivery-detail'>
           <h6>{t('24/7Delivery')}</h6>
-          <h5>{themeOption?.header?.support_number}</h5>
+          <h5>{supportNumber}</h5>
         </div>
       </a>
     </li>
@@ -24,3 +27,4 @@ const HeaderContactUs = () => {
 };
 
 export default HeaderContactUs;
+

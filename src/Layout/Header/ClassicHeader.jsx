@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FiBookmark } from 'react-icons/fi';
+import { FiBookmark, FiHeart } from 'react-icons/fi';
 import { Col, Row } from 'reactstrap';
 import ThemeOptionContext from '@/Helper/ThemeOptionsContext';
 import { useHeaderScroll } from '@/Utils/HeaderScroll';
@@ -22,7 +22,7 @@ const ClassicHeader = () => {
               <div className='navbar-top'>
                 <HeaderLogo />
                 <ClassicHeaderMenu />
-                <RightSideHeader noContactUs={true} wishListIcon={<FiBookmark />} />
+                <RightSideHeader noContactUs={true} wishListIcon={<FiHeart />} />
               </div>
             </Col>
           </Row>

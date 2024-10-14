@@ -1,13 +1,6 @@
 'use client';
 
 import React, { useContext, useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import ProductIdsContext from '@/Helper/ProductIdsContext';
-import { HomePageAPI } from '@/Utils/AxiosUtils/API';
-
-import request from '@/Utils/AxiosUtils';
-
-
 
 import BrowserFaq from '../Faq';
 import AccountTypes from './AccountTypes';
@@ -16,31 +9,68 @@ import QuickBuy from './CTAs/QuickBuy';
 import HomeBanner from './HomeBanner';
 import OurProcess from './OurProcess';
 import Reviews from './Reviews';
-import NewsLetter from '../ParisTheme/NewsLetter';
+import { HomePageAPI } from '@/Utils/AxiosUtils/API';
+import { useQuery } from '@tanstack/react-query';
+
+
+
+import ProductIdsContext from '@/Helper/ProductIdsContext';
+import ThemeOptionContext from '@/Helper/ThemeOptionsContext';
+import request from '@/Utils/AxiosUtils';
 
 const TunisTheme = () => {
-  const { setGetProductIds, isLoading: productLoader } = useContext(ProductIdsContext);
-  const { data, isLoading, refetch } = useQuery(['paris'], () => request({ url: HomePageAPI, params: { slug: 'paris' } }), {
-    enabled: false,
-    refetchOnWindowFocus: false,
-    select: (res) => res?.data,
-  });
-  useEffect(() => {
-    refetch();
-  }, []);
 
-  useEffect(() => {
-    if (isLoading) {
-      document.body.classList.add('skeleton-body');
-    } else {
-      document.body.classList.remove('skeleton-body');
-    }
+  // const { data, isLoading, refetch } = useQuery(['madrid'], () => request({ url: HomePageAPI, params: { slug: 'madrid' } }), {
+  //   enabled: false,
+  //   refetchOnWindowFocus: false,
+  //   select: (res) => res?.data,
+  // });
+  // // useEffect(() => {
+  // //   refetch();
+  // // }, []);
 
-    if (data?.content?.products_ids?.length > 0) {
-      setGetProductIds({ ids: Array.from(new Set(data?.content?.products_ids))?.join(',') });
-    }
-  }, [isLoading]);
-  if (!data?.content) return null;
+  // useEffect(() => {
+  //   document.documentElement.style.setProperty('--theme-color', '#ff0000');
+  //   refetch();
+  //   return () => {
+  //     document.documentElement.style.removeProperty('--theme-color');
+  //   };
+  // }, []);
+
+
+  // const { themeOption } = useContext(ThemeOptionContext);
+  // const { setGetProductIds, isLoading: productLoader } = useContext(ProductIdsContext);
+  // const { data, isLoading, refetch } = useQuery(['tokyo'], () => request({ url: HomePageAPI, params: { slug: 'tokyo' } }), { enabled: false, refetchOnWindowFocus: false, select: (res) => res?.data });
+  // useEffect(() => {
+  //   const headerTops = document.getElementsByClassName('header-top');
+
+  //   // document.documentElement.style.setProperty('--theme-color', '#E50914');
+  //   let timer = setTimeout(() => {
+  //     for (const headerTop of headerTops) {
+  //       headerTop.classList.add('bg-dark');
+  //     }
+  //   }, 0);
+
+  //   refetch();
+
+  //   return () => {
+  //     document.documentElement.style.removeProperty('--theme-color');
+  //     for (const headerTop of headerTops) {
+  //       headerTop.classList.remove('bg-dark');
+  //     }
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   // setThemeColor(themeOption?.general?.primary_color ?? "#E50914" )
+  //   if (isLoading) {
+  //     document.body.classList.add('skeleton-body');
+  //   } else {
+  //     document.body.classList.remove('skeleton-body');
+  //   }
+  // }, [isLoading]);
+
   return (
     <>
       <HomeBanner />
@@ -55,7 +85,7 @@ const TunisTheme = () => {
       <Reviews />
       <BrowserFaq />
 
-      {data?.content?.news_letter?.status && <QuickBuy dataAPI={data?.content?.news_letter} />}
+      <QuickBuy />
 
       {/* 
       {data?.content?.categories_icon_list?.status && <CategoryMenu dataAPI={data?.content?.categories_icon_list} />}

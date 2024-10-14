@@ -26,7 +26,7 @@ const MadridTheme = () => {
     select: (res) => res?.data,
   });
   useEffect(() => {
-    document.documentElement.style.setProperty('--theme-color', '#239698');
+    document.documentElement.style.setProperty('--theme-color', '#ff0000');
     refetch();
     return () => {
       document.documentElement.style.removeProperty('--theme-color');

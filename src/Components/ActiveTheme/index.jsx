@@ -13,28 +13,18 @@ import DenverTheme from '../DenverTheme';
 import TunisTheme from '../TunisTheme';
 
 const ActiveTheme = () => {
-  const { data, isLoading } = useQuery([ThemeAPI], () => request({ url: ThemeAPI }), {
-    enabled: true,
-    refetchOnWindowFocus: false,
-    select: (res) => res?.data.data,
-  });
-  if (isLoading) return <Loader />;
+  // const { data, isLoading } = useQuery([ThemeAPI], () => request({ url: ThemeAPI }), {
+  //   enabled: true,
+  //   refetchOnWindowFocus: false,
+  //   select: (res) => res?.data.data,
+  // });
 
-  const checkActive = {
-    paris: <ParisTheme />,
-    tokyo: <TokyoTheme />,
-    osaka: <OsakaTheme />,
-    rome: <RomeTheme />,
-    madrid: <MadridTheme />,
-    berlin: <BerlinTheme />,
-    denver: <DenverTheme />,
-    tunis: <TunisTheme />,
-  };
-  const activeTheme = data?.find((elem) => elem.status === 1);
+  // if (isLoading) return <Loader />;
 
-  activeTheme.slug = 'tunis';
 
-  return checkActive[activeTheme?.slug];
+  // activeTheme.slug = 'paris';
+
+  return <TunisTheme />;
 };
 
 export default ActiveTheme;

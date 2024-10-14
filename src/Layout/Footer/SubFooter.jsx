@@ -14,7 +14,7 @@ const SubFooter = () => {
         </div>
       )}
 
-      <div className='payment'>
+      <div className='payment flex justify-center'>
         <Image src={paymentImage} alt='payment' height={35} width={302} />
       </div>
       <FooterSocial />

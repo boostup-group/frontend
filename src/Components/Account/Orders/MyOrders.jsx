@@ -27,6 +27,22 @@ const MyOrders = () => {
     select: (res) => res?.data,
   });
   if (isLoading) return <Loader />;
+
+  const renderPaymentMethod = (method) => {
+    switch (method) {
+      case 'cash':
+        return 'Paiement en espèces (cash)';
+      case 'bank':
+        return 'Paiement par virement ou versement bancaire';
+      case 'd17':
+        return 'Paiement par l’application D17';
+      case 'click_to_pay':
+        return 'Paiement en ligne par Carte Bancaire';
+      default:
+        return 'Méthode de paiement inconnue';
+    }
+  };
+
   return (
     <>
       <AccountHeading title="MyOrders" />
@@ -58,7 +74,7 @@ const MyOrders = () => {
                           <span>{order.payment_status}</span>
                         </div>
                       </td>
-                      <td>{order.payment_method.toUpperCase()}</td>
+                      <td>{renderPaymentMethod(order.payment_method)}</td>
                       <td>
                         <Link href={`/${i18Lang}/account/order/details/${order.order_number}`}>
                           <RiEyeLine />

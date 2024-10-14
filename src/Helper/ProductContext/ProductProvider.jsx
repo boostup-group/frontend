@@ -21,6 +21,7 @@ const ProductProvider = (props) => {
       select: (data) => data.data.data,
     },
   );
+  console.log(productAPIData)
   useEffect(() => {
     if (productData) {
       setProductAPIData((prev) => ({ ...prev, data: productData, productIsLoading: productIsLoading }));

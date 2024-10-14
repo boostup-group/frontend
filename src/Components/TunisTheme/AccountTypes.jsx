@@ -128,14 +128,14 @@
 
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Save } from "lucide-react";
 import { Button } from "../ui/button";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const PricingHeader = ({ title, subtitle }) => (
     <div className="container flex flex-col items-center px-4 mx-auto mb-4">
-        <p className="text-base lg:text-2xl font-medium">
+        <p className="text-[#E50914] lg:text-2xl font-medium ">
             {subtitle}
         </p>
         <h1 className="text-3xl lg:text-5xl font-bold mt-3">
@@ -149,19 +149,19 @@ const PricingSwitch = ({ onSwitch }) => (
     <Tabs defaultValue="0" className="w-full flex justify-center mx-auto" onValueChange={onSwitch}>
         <TabsList className="py-4 px-2">
             <TabsTrigger value="0" className="text-base">
-                Weekly
+                3 Mois
             </TabsTrigger>
             <TabsTrigger value="1" className="text-base">
-                Monthly
+                6 Mois
             </TabsTrigger>
             <TabsTrigger value="2" className="text-base">
-                Yearly
+                12 Mois
             </TabsTrigger>
         </TabsList>
     </Tabs>
 );
 
-const PricingCard = ({ pricingPeriod, title, weeklyPrice, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive }) => (
+const PricingCard = ({ pricingPeriod, title, weeklyPrice, monthlyPrice, yearlyPrice, description, features, actionLabel, popular, exclusive, save}) => (
     <Card
         className={cn(`w-96 flex flex-col justify-between py-6 px-4 ${popular ? "border-rose-400" : "border-zinc-700"} sm:mx-0`, {
             "animate-background-shine bg-white dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] transition-colors":
@@ -176,7 +176,7 @@ const PricingCard = ({ pricingPeriod, title, weeklyPrice, monthlyPrice, yearlyPr
                             className={cn("px-3 rounded-xl h-fit text-sm py-1 bg-zinc-200 text-black dark:bg-zinc-800 dark:text-white", {
                                 "bg-gradient-to-r from-orange-400 to-rose-400 dark:text-black ": popular,
                             })}>
-                            Save ${monthlyPrice * 12 - yearlyPrice}
+                            Économisez DT {save}
                         </div>
                     </div>
                 ) : (
@@ -184,16 +184,16 @@ const PricingCard = ({ pricingPeriod, title, weeklyPrice, monthlyPrice, yearlyPr
                 )}
                 <div className="flex gap-1">
                     <h3 className="text-4xl font-bold">
-                        {pricingPeriod === 'yearly' && yearlyPrice ? "$" + yearlyPrice 
-                            : pricingPeriod === 'monthly' && monthlyPrice ? "$" + monthlyPrice 
-                            : pricingPeriod === 'weekly' && weeklyPrice ? "$" + weeklyPrice 
-                            : "Custom"}
+                        {pricingPeriod === 'yearly' && yearlyPrice ? "DT " + yearlyPrice
+                            : pricingPeriod === 'monthly' && monthlyPrice ? "DT " + monthlyPrice
+                                : pricingPeriod === 'weekly' && weeklyPrice ? "DT " + weeklyPrice
+                                    : "Custom"}
                     </h3>
                     <span className="flex flex-col justify-end text-sm mb-1">
-                        {pricingPeriod === 'yearly' ? "/year" 
-                        : pricingPeriod === 'monthly' ? "/month" 
-                        : pricingPeriod === 'weekly' ? "/week" 
-                        : null}
+                        {pricingPeriod === 'yearly' ? "/ 12 Mois"
+                            : pricingPeriod === 'monthly' ? "/ 6 Mois"
+                                : pricingPeriod === 'weekly' ? "/ 3 Mois"
+                                    : null}
                     </span>
                 </div>
                 <CardDescription className="pt-2 h-16">{description}</CardDescription>
@@ -205,7 +205,7 @@ const PricingCard = ({ pricingPeriod, title, weeklyPrice, monthlyPrice, yearlyPr
             </CardContent>
         </div>
         <CardFooter className="mt-4">
-            <Button className="relative inline-flex w-full items-center justify-center rounded-md bg-black text-white dark:bg-white px-8 py-3 font-medium  dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <Button className="relative inline-flex w-full items-center justify-center rounded-md bg-[#E50914] text-white dark:bg-white px-8 py-4 font-bold  dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                 <div className="absolute -inset-0.5 -z-10 rounded-lg bg-gradient-to-b from-[#c7d2fe] to-[#8678f9] opacity-75 blur" />
                 {actionLabel}
             </Button>
@@ -232,39 +232,42 @@ export default function AccountTypes() {
 
     const plans = [
         {
-            title: "Basic Account",
-            weeklyPrice: 5,
-            monthlyPrice: 10,
-            yearlyPrice: 100,
+            title: "Abonnement Netflix Essentiel",
+            weeklyPrice: 65,
+            monthlyPrice: 109,
+            yearlyPrice: 189,
+            save: 70,
             description: "Parfait si vous regardez seul(e)",
             features: ["1 seul appareil", "Résolution 4K (Ultra HD)", "TV, ordinateur, smartphone, tablette"],
-            actionLabel: "Buy Now",
+            actionLabel: "S'abonner",
         },
         {
-            title: "Standard Account",
-            weeklyPrice: 15,
-            monthlyPrice: 25,
-            yearlyPrice: 250,
+            title: "Abonnement Netflix Standard",
+            weeklyPrice: 119,
+            monthlyPrice: 219,
+            yearlyPrice: 399,
+            save: 80,
             description: "Parfait pour deux personnes vivant sous le même toit",
             features: ["2 appareils en même temps", "Résolution 1080p (Full HD)", "TV, ordinateur, smartphone, tablette"],
-            actionLabel: "Buy Now",
+            actionLabel: "S'abonner",
             popular: true,
         },
         {
-            title: "Premuim Account",
-            weeklyPrice: 15,
-            monthlyPrice: 25,
-            yearlyPrice: 250,
+            title: "Abonnement Netflix Premium",
+            weeklyPrice: 165,
+            monthlyPrice: 299,
+            yearlyPrice: 539,
+            save: 120,
             description: "Parfait pour les familles qui ont plusieurs appareils",
             features: ["4 appareils en même temps", "Résolution 4K (Ultra HD)", "TV, ordinateur, smartphone, tablette"],
-            actionLabel: "Contact Sales",
+            actionLabel: "S'abonner",
             exclusive: true,
         },
     ];
 
     return (
-        <div className="py-8">
-            <PricingHeader title="Account Types" subtitle="Choose the account type that's right for you" />
+        <div className="py-8" id="pricing">
+            <PricingHeader title="Nos Offres" subtitle="Choisissez Le Type De Compte Qui Vous Convient Le Mieux" />
             <PricingSwitch onSwitch={togglePricingPeriod} />
             <section className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-8 mt-8">
                 {plans.map((plan) => {

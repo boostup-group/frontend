@@ -20,15 +20,15 @@ const CartProductDetail = ({ elem }) => {
         <div className='product-detail'>
           <ul>
             <li className='name'>
-              <Link href={`/${i18Lang}/product/${elem?.product?.slug}`}>{elem?.variation?.name ?? elem?.product?.name}</Link>
+              <Link href={`/${i18Lang}/product/${elem?.product?.slug}`}>{elem?.product?.name}</Link>
             </li>
 
             <li className='text-content'>
-              <span className='text-title'>{t('SoldBy')} : </span> {t('Fastkart')}
+              {/* <span className='text-title'>{t('SoldBy')} : </span> {t('Fastkart')} */}
             </li>
 
             <li className='text-content'>
-              <span className='text-title'>{t('Unit')}</span> : {elem?.variation?.unit ?? elem?.product?.unit}
+              {/* <span className='text-title'>{t('Unit')}</span> : {elem?.variation?.unit ?? elem?.product?.unit} */}
             </li>
 
             <li>

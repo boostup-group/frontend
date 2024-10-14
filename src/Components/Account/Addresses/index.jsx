@@ -9,7 +9,7 @@ import AddressHeader from './AddressHeader';
 const AccountAddresses = () => {
   return (
     <>
-      <Breadcrumb title={'Orders'} subNavigation={[{ name: 'Orders' }]} />
+      {/* <Breadcrumb title={'Orders'} subNavigation={[{ name: 'Orders' }]} /> */}
       <WrapperComponent classes={{ sectionClass: 'user-dashboard-section section-b-space' }} customCol={true}>
         <AccountSidebar tabActive={'address'} />
         <Col xxl={9} lg={8}>

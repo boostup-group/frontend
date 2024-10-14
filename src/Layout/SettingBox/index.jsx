@@ -46,7 +46,7 @@ const SettingBox = () => {
   };
   return (
     <div className="setting-box">
-      {/* <Btn className="btn setting-button theme-bg-color text-white" onClick={() => setOpenSetting((prev) => !prev)}>
+      <Btn className="btn setting-button theme-bg-color text-white" onClick={() => setOpenSetting((prev) => !prev)}>
         {openSetting ? <RiCloseLine /> : <RiSettings3Fill />}
       </Btn>
       <div className={`theme-setting-2 ${openSetting ? "active" : ""}`}>
@@ -83,7 +83,7 @@ const SettingBox = () => {
             </li>
           </ul>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

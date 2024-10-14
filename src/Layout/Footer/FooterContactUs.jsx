@@ -12,7 +12,7 @@ const FooterContactUs = () => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   return (
-    <Col xl={3} lg={4} sm={6}>
+    <Col>
       {themeOption?.footer?.support_number || themeOption?.footer?.support_email ? (
         <div className={`footer-title contact-title`}>
           <h4>{t('ContactUs')}</h4>
@@ -25,7 +25,7 @@ const FooterContactUs = () => {
         <ul>
           <FooterSupportNumber />
           <FooterSupportEmail />
-          <FooterDownloadAppLink />
+          {/* <FooterDownloadAppLink /> */}
         </ul>
       </div>
     </Col>

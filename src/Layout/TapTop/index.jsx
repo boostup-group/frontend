@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { RiArrowUpSLine } from "react-icons/ri";
-import SettingBox from "../SettingBox";
 import ThemeOptionContext from "@/Helper/ThemeOptionsContext";
 
 const TapTop = () => {
@@ -29,7 +28,6 @@ const TapTop = () => {
   return (
     <>
       <div className="theme-option">
-        <SettingBox />
         {themeOption?.general?.back_to_top_enable && (
           <div className="back-to-top" style={{ display: taptopStyle }}>
             <a onClick={() => executeScroll()}>

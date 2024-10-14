@@ -45,7 +45,7 @@ const CollectionContain = () => {
   };
   return (
     <>
-      <Breadcrumb title={'Collection'} subNavigation={[{ name: 'Collection' }]} />
+      {/* <Breadcrumb title={'Collection'} subNavigation={[{ name: 'Collection' }]} /> */}
       {isCollectionMatch[collectionLayout]}
     </>
   );

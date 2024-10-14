@@ -13,12 +13,12 @@ export const sidebarMenu = [
     id: 'notification',
     path: '/account/notification',
   },
-  {
-    title: 'BankDetails',
-    icon: <RiBankLine />,
-    id: 'bank-details',
-    path: '/account/bank-details',
-  },
+  // {
+  //   title: 'BankDetails',
+  //   icon: <RiBankLine />,
+  //   id: 'bank-details',
+  //   path: '/account/bank-details',
+  // },
   {
     title: 'MyWallet',
     icon: <RiWalletLine />,
@@ -37,10 +37,10 @@ export const sidebarMenu = [
     id: 'order',
     path: '/account/order',
   },
-  {
-    title: 'RefundHistory',
-    icon: <RiMapPinLine />,
-    id: 'refund',
-    path: '/account/refund',
-  },
+  // {
+  //   title: 'RefundHistory',
+  //   icon: <RiMapPinLine />,
+  //   id: 'refund',
+  //   path: '/account/refund',
+  // },
 ];
