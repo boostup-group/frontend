@@ -12,7 +12,7 @@ const RelatedProduct = ({ productState }) => {
       <ProductSection1
         dataAPI={{ title: 'YouMayAlsoLike', product_ids: productState?.product?.related_products }}
         ProductData={filteredProduct}
-        svgUrl={<LeafSVG className='icon-width' />}
+        svgUrl={null}
         noCustomClass={true}
         classObj={{ productStyle: 'product-standard', productBoxClass: 'product-box-bg' }}
         customSliderOption={productPageRelatedSliderOptions}

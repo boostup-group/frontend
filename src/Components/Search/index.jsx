@@ -50,9 +50,9 @@ const SearchModule = () => {
       <WrapperComponent classes={{ sectionClass: 'search-section', col: 'mx-auto' }} colProps={{ xxl: 6, xl: 8 }}>
         <div className='title d-block text-center'>
           <h2>{t('Searchforproducts')}</h2>
-          <span className='title-leaf'>
+          {/* <span className='title-leaf'>
             <LeafSVG />
-          </span>
+          </span> */}
         </div>
 
         <div className='search-box'>
