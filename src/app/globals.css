@@ -125,14 +125,15 @@
 }
 
 .payment-image img {
-  width: 35px !important;
-  height: 35px !important;
+  width: 80px !important;
+  height: 80px !important;
   top: 50% !important;
+  opacity: .3;
 }
 
 @media (max-width: 767px) {
   .payment-image img {
-    top: 80% !important;
+    top: 55% !important;
   }
 }
 
