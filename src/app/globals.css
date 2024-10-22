@@ -156,3 +156,9 @@
 header .top-nav .navbar-top .web-logo img {
   width: calc(120px + 42*(100vw - 320px) / 700) !important;
 }
+
+@media (max-width: 1199px) {
+  header .offcanvas:not(.offcanvas-end):not(.offcanvas-bottom) {
+      z-index: 99 !important;
+  }
+}
