@@ -30,18 +30,18 @@ const ContactUsForm = () => {
           <Row>
             <SimpleInputField
               nameList={[
-                { name: 'name', placeholder: t('EnterFullName'), toplabel: 'Full Name', inputaddon: 'true', prefixvalue: <RiUserFill />, colprops: { xs: 12 } },
-                { name: 'email', placeholder: t('EnterEmail'), toplabel: 'Email Address', inputaddon: 'true', prefixvalue: <RiMailFill />, colprops: { xxl: 6, lg: 12, sm: 6 } },
+                { name: 'name', placeholder: t('EnterFullName'), toplabel: 'Nom et Prénom', inputaddon: 'true', prefixvalue: <RiUserFill />, colprops: { xs: 12 } },
+                { name: 'email', placeholder: t('EnterEmail'), toplabel: 'Adresse Email', inputaddon: 'true', prefixvalue: <RiMailFill />, colprops: { xxl: 6, lg: 12, sm: 6 } },
                 {
                   name: 'phone',
                   placeholder: t('EnterPhoneNumber'),
-                  toplabel: 'Phone Number',
+                  toplabel: 'Numéro de Téléphone',
                   inputaddon: 'true',
                   prefixvalue: <RiSmartphoneLine />,
                   type: 'number',
                   colprops: { xxl: 6, lg: 12, sm: 6 },
                 },
-                { name: 'subject', placeholder: t('EnterSubject'), toplabel: 'Subject', inputaddon: 'true', prefixvalue: <RiUserFill />, colprops: { xs: 12 } },
+                { name: 'subject', placeholder: t('EnterSubject'), toplabel: 'Objet', inputaddon: 'true', prefixvalue: <RiUserFill />, colprops: { xs: 12 } },
                 { name: 'message', placeholder: t('EnterYourMessage'), toplabel: 'Message', inputaddon: 'true', prefixvalue: <RiChat2Fill />, colprops: { xs: 12 }, type: 'textarea', rows: 5 },
               ]}
             />

@@ -14,15 +14,15 @@ export const headerMenu = [
     path: '/',
 
   },
-  {
-    id: 2,
-    title: 'À propos',
-    type: 'link',
-    path: '/about-us',
-  },
+  // {
+  //   id: 2,
+  //   title: 'À propos',
+  //   type: 'link',
+  //   path: '/about-us',
+  // },
   {
     id: 3,
-    title: 'Collection',
+    title: 'Nos Abonnements',
     styleType: 'link',
     path: '/collections',
     slider: 'product',
@@ -61,11 +61,6 @@ export const headerMenu = [
             title: 'Prime Video',
             path: 'collections',
             params: { layout: 'collection_3_grid', category: 'prime-video' },
-          },
-          {
-            title: 'Paramount+',
-            path: 'collections',
-            params: { layout: 'collection_3_grid', category: 'paramount' },
           }
         ],
       },
@@ -394,56 +389,68 @@ export const headerMenu = [
   //     },
   //   ],
   // },
+  // {
+  //   id: 4,
+  //   title: 'Blog',
+  //   styleType: 'link',
+  //   customChildren: true,
+  //   slider: 'blog',
+  //   children: [
+  //     {
+  //       column: [
+  //         {
+  //           title: 'Nos Catégories',
+  //           type: 'sub',
+  //         },
+  //         {
+  //           title: 'Nouveautés et actualités',
+  //           type: 'link',
+  //           path: 'blogs',
+  //           label: 'New',
+  //           params: { category: 'nouveautes-et-actualites' },
+  //         },
+  //         {
+  //           title: 'Recommendations',
+  //           type: 'link',
+  //           label: 'Hot',
+  //           path: 'blogs',
+  //           params: { category: 'recommandations' },
+  //         },
+  //         {
+  //           title: "Guides d'achat",
+  //           type: 'link',
+  //           path: 'blogs',
+  //           params: { category: 'guides-dachat' },
+  //         },
+  //         {
+  //           title: 'Derrière les Coulisses',
+  //           type: 'link',
+  //           path: 'blogs',
+  //           labelClass: 'warning-label',
+  //           params: { category: 'dermier-les-coulisses' },
+  //         },
+  //         {
+  //           title: 'Astuces et Conseils',
+  //           type: 'link',
+  //           path: 'blogs',
+  //           params: { category: 'astuces-et-conseils' },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
-    id: 4,
-    title: 'Blog',
-    styleType: 'link',
-    customChildren: true,
-    slider: 'blog',
-    children: [
-      {
-        column: [
-          {
-            title: 'Nos Catégories',
-            type: 'sub',
-          },
-          {
-            title: 'Nouveautés et actualités',
-            type: 'link',
-            path: 'blogs',
-            label: 'New',
-            params: { category: 'nouveautes-et-actualites' },
-          },
-          {
-            title: 'Recommendations',
-            type: 'link',
-            label: 'Hot',
-            path: 'blogs',
-            params: { category: 'recommandations' },
-          },
-          {
-            title: "Guides d'achat",
-            type: 'link',
-            path: 'blogs',
-            params: { category: 'guides-dachat' },
-          },
-          {
-            title: 'Derrière les Coulisses',
-            type: 'link',
-            path: 'blogs',
-            labelClass: 'warning-label',
-            params: { category: 'dermier-les-coulisses' },
-          },
-          {
-            title: 'Astuces et Conseils',
-            type: 'link',
-            path: 'blogs',
-            params: { category: 'astuces-et-conseils' },
-          },
-        ],
-      },
-    ],
+    id: 5,
+    title: 'Modes de Paiement',
+    type: 'link',
+    path: '/payment-methods',
   },
+  // {
+  //   id: 5,
+  //   title: 'Guides',
+  //   type: 'link',
+  //   path: '/',
+  // },
   {
     id: 5,
     title: 'Contact',

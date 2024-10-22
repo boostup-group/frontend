@@ -27,7 +27,7 @@ const LeftSideModal = ({ cloneVariation, productObj }) => {
           ))}
         </Slider>
       </div>
-      <div className="thumbnail-slider">
+      {/* <div className="thumbnail-slider">
         <Slider {...viewModalSliderOption} slidesToShow={cloneVariation?.product?.product_galleries?.length - 1} asNavFor={nav1} ref={(slider) => (slider2.current = slider)}>
           {cloneVariation?.product?.product_galleries?.map((item, i) => (
             <div className='slider-image' key={i}>
@@ -37,7 +37,7 @@ const LeftSideModal = ({ cloneVariation, productObj }) => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
       {/*>
        
        */}

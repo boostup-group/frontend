@@ -19,7 +19,7 @@ const HeaderProfile = () => {
   const [modal, setModal] = useState(false);
   const isAuthenticated = Cookies.get('uat');
   const { t } = useTranslation(i18Lang, 'common');
-  const { mutate, isLoading } = useCreate(LogoutAPI, false, false, 'Logout Successfully', () => {
+  const { mutate, isLoading } = useCreate(LogoutAPI, false, false, 'Déconnexion Réussie', () => {
     Cookies.remove('uat');
     Cookies.remove('ue');
     Cookies.remove('account');

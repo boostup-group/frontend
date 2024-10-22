@@ -3,7 +3,8 @@ import ThemeOptionContext from '@/Helper/ThemeOptionsContext';
 import { useTranslation } from '@/app/i18n/client';
 import Cookies from 'js-cookie';
 import { useContext, useState } from 'react';
-import { RiQuestionnaireLine, RiRulerLine, RiTruckLine } from 'react-icons/ri';
+import { RiQuestionnaireLine, RiRulerLine } from 'react-icons/ri';
+import { CiMoneyBill } from "react-icons/ci";
 import { Progress } from 'reactstrap';
 import DeliveryReturnModal from './AllModal/DeliveryReturnModal';
 import QuestionAnswerModal from './AllModal/QuestionAnswerModal';
@@ -56,7 +57,7 @@ const AddProductDetail = ({ productState }) => {
           )}
           {themeOption?.product?.shipping_and_return && productState?.product?.is_return ? (
             <a onClick={() => setModal('delivery')}>
-              <RiTruckLine /> {t('DeliveryReturn')}
+              <CiMoneyBill /> {'Politique de Remboursement'}
             </a>
           ) : null}
           {isLogin && themeOption?.product?.shipping_and_return && productState?.product?.is_return ? (

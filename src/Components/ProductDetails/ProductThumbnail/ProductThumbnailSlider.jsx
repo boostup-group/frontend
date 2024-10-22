@@ -38,7 +38,7 @@ const ProductThumbnailSlider = ({ productState }) => {
                 {productState?.product?.product_galleries?.map((elem, i) => (
                   <div key={i}>
                     <div className='slider-image'>
-                      <img height={580} width={580} src={elem?.original_url} className='img-fluid' alt={elem?.name} />
+                      <img height={580} width={580} src={elem?.original_url} className='img-fluid rounded-lg' alt={elem?.name} />
                     </div>
                   </div>
                 ))}

@@ -17,8 +17,8 @@ const ProductInformation = ({ productState }) => {
           <li>{t("SKU")} : {productState?.selectedVariation?.sku ?? productState?.product?.sku}</li>
           {/* <li>{t("Weight")} : {productState?.product?.weight}</li> */}
           <li>
-            {t("StockStatus")} :
-            {productState?.selectedVariation?.stock_status ? ModifyString(productState?.selectedVariation?.stock_status, false, '_') : ModifyString(productState?.product?.stock_status, false, '_')}
+            {t("StockStatus")} : 
+            {productState?.selectedVariation?.stock_status ? " Disponible" : " Disponible"}
           </li>
           {/* <li>{t("Quantity")} : {productState?.selectedVariation?.quantity ?? productState?.product?.quantity} Items Left</li> */}
           <li>{t("Date")} : {dateFormate(productState?.product?.created_at, true)}</li>

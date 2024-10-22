@@ -22,7 +22,7 @@ const useUpdatePassword = () => {
         router.push('/auth/login');
         Cookies.remove('uo', { path: '/' });
         Cookies.remove('ue', { path: '/' });
-        ToastNotification('success', 'Your password has been changed successfully. Use your new password to log in.');
+        ToastNotification('success', 'Votre mot de passe a été modifié avec succès. Utilisez votre nouveau mot de passe pour vous connecter.');
       },
     },
   );

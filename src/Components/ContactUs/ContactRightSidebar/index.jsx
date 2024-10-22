@@ -5,7 +5,7 @@ import ContactUsForm from './ContactUsForm';
 const ContactRightSidebar = () => {
   return (
     <Col lg={6}>
-      <CustomHeading title={'ContactUs'} customtitleClass={'d-xxl-none d-block'} />
+      <h1 className='text-2xl mb-4 font-bold'>Nous Contacter</h1>
       <div className='right-sidebar-box mb-8'>
         <ContactUsForm />
       </div>

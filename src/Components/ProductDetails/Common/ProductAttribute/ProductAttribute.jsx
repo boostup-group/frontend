@@ -153,7 +153,8 @@ const ProductAttribute = ({ productState, setProductState, stickyAddToCart }) =>
             <>
               <div className='product-title'>
                 <h4>
-                  {elem?.name} : {elem?.selected_value} <span>Mois</span>
+                  {elem?.name} : {elem?.selected_value} 
+                  {isNaN(Number(elem?.selected_value)) ? "" : " Mois"}
                 </h4>
               </div>
               {elem?.style == 'radio' ? (

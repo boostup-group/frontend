@@ -29,6 +29,7 @@ const BrowserFaq = () => {
     select: (data) => data?.data?.data,
   });
 
+  console.log('faqs', data);
   // if (isLoading) return <Loader />;
   return (
     <>
@@ -60,8 +61,24 @@ const BrowserFaq = () => {
                         <RiArrowDownSLine />
                       </AccordionHeader>
                       <AccordionBody accordionId={i + 1}>
-                        <p>{faq?.description}</p>
+                        {faq?.description?.includes('●') ? (
+                          <p>
+                            <ul className="flex flex-col">
+                              {faq?.description
+                                .split('\n') // Split by newlines first to handle paragraphs correctly
+                                .filter(item => item.trim() !== '')
+                                .map((item, index) => (
+                                  <li key={index} className={item.trim().startsWith('●') ? 'ml-8' : ''}>
+                                    {item.trim().startsWith('●') ? item.trim() : item.trim()} {/* If it starts with ●, keep it */}
+                                  </li>
+                                ))}
+                            </ul>
+                          </p>
+                        ) : (
+                          <p>{faq?.description}</p>
+                        )}
                       </AccordionBody>
+
                     </AccordionItem>
                   ))}
                 </Accordion>

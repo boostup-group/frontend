@@ -68,12 +68,12 @@ const HeaderCartBottom = ({ modal, setModal, shippingFreeAmt, shippingCal }) => 
           <div className='empty-icon'>
             <RiShoppingCartLine />
           </div>
-          <h5>{'Your cart is currently empty.'}</h5>
+          <h5>{'Votre panier est actuellement vide.'}</h5>
         </div>
       )}
       {cartProducts?.length ? (
         <div className='bottom-box'>
-          <p className='free'>{t('Shippingandtaxesarecomputedatcheckout')}.</p>
+          {/* <p className='free'>{t('Shippingandtaxesarecomputedatcheckout')}.</p> */}
           <>
             <div className='price-box'>
               <h5>{t('Total')} :</h5>

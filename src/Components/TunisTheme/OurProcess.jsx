@@ -157,7 +157,7 @@ import { Timeline } from "../ui/timeline";
 export function OurProcess() {
   const data = [
     {
-      title: "Etape 01",
+      title: "Etape 1",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Sélectionner le produit</h1>
@@ -195,7 +195,7 @@ export function OurProcess() {
       ),
     },
     {
-      title: "Etape 02",
+      title: "Etape 2",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Saisir vos informations personnelles</h1>
@@ -233,7 +233,7 @@ export function OurProcess() {
       ),
     },
     {
-      title: "Etape 03",
+      title: "Etape 3",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Choisir la méthode de paiement</h1>
@@ -271,7 +271,7 @@ export function OurProcess() {
       ),
     },,
     {
-      title: "Etape 04",
+      title: "Etape 4",
       content: (
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Finaliser la commande</h1>

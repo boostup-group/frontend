@@ -23,13 +23,13 @@ const FooterSocial = () => {
                 </Link>
               </li>
             )}
-            {themeOption?.footer?.twitter && (
+            {/* {themeOption?.footer?.twitter && (
               <li>
                 <Link href={themeOption?.footer?.twitter} target='_blank'>
                   <RiTwitterFill />
                 </Link>
               </li>
-            )}
+            )} */}
             {themeOption?.footer?.instagram && (
               <li>
                 <Link href={themeOption?.footer?.instagram} target='_blank'>
@@ -37,13 +37,13 @@ const FooterSocial = () => {
                 </Link>
               </li>
             )}
-            {themeOption?.footer?.pinterest && (
+            {/* {themeOption?.footer?.pinterest && (
               <li>
                 <Link href={themeOption?.footer?.pinterest} target='_blank'>
                   <RiPinterestLine />
                 </Link>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       ) : (

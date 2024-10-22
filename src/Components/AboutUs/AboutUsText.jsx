@@ -20,7 +20,7 @@ const AboutUsText = () => {
           </div>
           <div className='delivery-list'>
             <p className='text-content'>{themeOption?.about_us?.about?.description}</p>
-            <ul className='delivery-box'>
+            {/* <ul className='delivery-box'>
               {themeOption?.about_us?.about?.futures.map((data, index) => (
                 <li key={index}>
                   <div className='delivery-box'>
@@ -33,7 +33,7 @@ const AboutUsText = () => {
                   </div>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

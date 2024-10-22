@@ -2,7 +2,7 @@ import { RiBankLine, RiCoinLine, RiFileTextLine, RiHomeLine, RiNotificationLine,
 
 export const sidebarMenu = [
   {
-    title: 'Dashboard',
+    title: 'Tableau de bord',
     icon: <RiHomeLine />,
     id: 'dashboard',
     path: '/account/dashboard',
@@ -12,6 +12,12 @@ export const sidebarMenu = [
     icon: <RiNotificationLine />,
     id: 'notification',
     path: '/account/notification',
+  },
+  {
+    title: 'MyOrders',
+    icon: <RiFileTextLine />,
+    id: 'order',
+    path: '/account/order',
   },
   // {
   //   title: 'BankDetails',
@@ -26,16 +32,10 @@ export const sidebarMenu = [
     path: '/account/wallet',
   },
   {
-    title: 'EarningPoints',
+    title: 'Points cadeaux',
     icon: <RiCoinLine />,
     id: 'point',
     path: '/account/point',
-  },
-  {
-    title: 'MyOrders',
-    icon: <RiFileTextLine />,
-    id: 'order',
-    path: '/account/order',
   },
   // {
   //   title: 'RefundHistory',

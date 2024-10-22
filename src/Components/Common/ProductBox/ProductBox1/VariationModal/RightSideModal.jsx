@@ -11,7 +11,6 @@ const RightVariationModal = ({ cloneVariation }) => {
   const { convertCurrency } = useContext(SettingContext);
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
-  const rating = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
   return (
     <>
       <h4 className='text-xl font-semibold mb-2'>{cloneVariation?.product?.name}</h4>
@@ -23,15 +22,15 @@ const RightVariationModal = ({ cloneVariation }) => {
         </Label>
       </h4>
       <div className='product-rating'>
-        <ProductBox1Rating totalRating={rating/15} />
+        <ProductBox1Rating totalRating={cloneVariation?.selectedVariation?.rating_count ?? cloneVariation?.product?.rating_count} />
         <div className='fs-14 ms-2'>
-          {rating} {t('Reviews')}
+          {t('Reviews')}
         </div>
       </div>
       <div className='product-detail'>
         <h4>{t('ProductDetails')}:</h4>
         <div className='mt-2'>
-          <TextLimit value={cloneVariation?.product?.short_description} maxLength={200} tag={'p'}/>
+          <TextLimit value={cloneVariation?.product?.short_description} maxLength={200} tag={'p'} />
         </div>
       </div>
       <div className='pickup-box'>
@@ -46,8 +45,7 @@ const RightVariationModal = ({ cloneVariation }) => {
             <li>
               {t('StockStatus')} :
               {cloneVariation?.selectedVariation?.stock_status
-                ? ModifyString(cloneVariation?.selectedVariation?.stock_status, false, '_')
-                : ModifyString(cloneVariation?.product?.stock_status, false, '_')}
+                ? " Disponible" : " Disponible"}
             </li>
             {/* <li>
               {t('Quantity')} : {cloneVariation?.selectedVariation?.quantity ?? cloneVariation?.product?.quantity} {t('ItemsLeft')}

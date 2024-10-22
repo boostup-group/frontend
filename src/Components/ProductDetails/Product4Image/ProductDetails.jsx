@@ -9,7 +9,6 @@ const ProductDetails = ({ productState }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   const { convertCurrency } = useContext(SettingContext);
-  const rating = Math.floor(Math.random() * (100 - 20 + 1)) + 20;
   return (
     <>
       <CustomerOrderCount productState={productState} />
@@ -25,9 +24,9 @@ const ProductDetails = ({ productState }) => {
           ) : null}
         </h3>
         <div className='product-rating custom-rate'>
-          <ProductBox1Rating totalRating={rating/15} />
+          <ProductBox1Rating totalRating={productState?.selectedVariation?.rating_count ?? productState?.product?.rating_count} />
           <span className='review'>
-            {rating} {t('Review')}
+            {t('Review')}
           </span>
         </div>
       </div>

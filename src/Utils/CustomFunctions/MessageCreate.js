@@ -6,6 +6,6 @@ const MessageCreate = (path) =>
     .slice(1)
     // .map((word, i) => (i === 0 ? Capitalize(word) : i === 1 ? word + "d" : ""))
     .map((word, i) => (i === 0 ? Capitalize(word) : i === 1 ? word : ""))
-    .join(" ") + " successfully";
+    .join(" ") + " avec succès";
 
 export default MessageCreate;

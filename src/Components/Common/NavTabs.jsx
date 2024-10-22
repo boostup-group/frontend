@@ -21,7 +21,7 @@ const NavTabTitles = ({ classes = {}, activeTab, setActiveTab, titleList, isLogo
       return activeTab == String(index + 1);
     }
   };
-  const { mutate, isLoading } = useCreate(LogoutAPI, false, false, 'Logout Successfully', () => {
+  const { mutate, isLoading } = useCreate(LogoutAPI, false, false, 'Déconnexion Réussie', () => {
     Cookies.remove('uat');
     Cookies.remove('ue');
     Cookies.remove('account');

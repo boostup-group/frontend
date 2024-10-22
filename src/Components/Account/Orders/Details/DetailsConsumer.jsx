@@ -75,15 +75,15 @@ const DetailsConsumer = ({ data }) => {
         <Col xxl={4} lg={12} md={5}>
           <Card className='h-m30'>
             <CardBody>
-              <h3 className='fw-semibold mb-3'>{'summary'}</h3>
+              <h3 className='fw-semibold mb-3'>Détails</h3>
               <div className='tracking-total tracking-wrapper'>
                 <ul>
                   <li>
-                    {t('Subtotal')} <span>{data?.amount ? data?.amount : 0}</span>
+                    {t('Subtotal')} <span>{data?.amount ? data?.amount + ' DT' : 0}</span>
                   </li>
-                  <li>
+                  {/* <li>
                     {t('Tax')} <span>{data?.tax_total ? data?.tax_total : 0}</span>
-                  </li>
+                  </li> */}
                   {data?.points_amount != 0 ? (
                     <li className='txt-primary fw-bold'>
                       {t('Points')} <span>{data?.points_amount}</span>
@@ -95,7 +95,7 @@ const DetailsConsumer = ({ data }) => {
                     </li>
                   ) : null}
                   <li>
-                    {t('Total')} <span>{data?.total ? data?.total : 0}</span>
+                    {t('Total')} <span>{data?.total ? data?.total + ' DT' : 0}</span>
                   </li>
                 </ul>
               </div>

@@ -11,7 +11,7 @@ const FooterUseFul = ({ footerMenu, setFooterMenu }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
 
-  console.log('footer links:',themeOption?.footer?.useful_link);
+  console.log('footer links:', themeOption?.footer?.useful_link);
 
   return (
     <Col >
@@ -20,22 +20,31 @@ const FooterUseFul = ({ footerMenu, setFooterMenu }) => {
       </div>
       <div className='footer-contain'>
         <ul>
-          {themeOption?.footer?.useful_link?.length > 0 ? (
-            themeOption?.footer?.useful_link?.map((elem, i) => (
-              <li key={i}>
-                <Link href={`/${i18Lang}/${elem}`} className='text-red text-content text-capitalize'>
-                  {elem}
-                </Link>
-              </li>
-            ))
-          ) : (
-            <NoDataFound
-              data={{
-                customClass: 'no-data-footer',
-                title: 'No Link Found',
-              }}
-            />
-          )}
+          <li>
+            <Link href={`/${i18Lang}/blogs`} className='text-red text-content text-capitalize'>
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link href={`/${i18Lang}/about-us`} className='text-red text-content text-capitalize'>
+              A Propos
+            </Link>
+          </li>
+          <li>
+            <Link href={`/${i18Lang}/collections`} className='text-red text-content text-capitalize'>
+              Nos Abonnements
+            </Link>
+          </li>
+          <li>
+            <Link href={`/${i18Lang}/contact-us`} className='text-red text-content text-capitalize'>
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link href={`/${i18Lang}/refund-policy`} className='text-red text-content text-capitalize'>
+              Politique de remboursement
+            </Link>
+          </li>
         </ul>
       </div>
     </Col>

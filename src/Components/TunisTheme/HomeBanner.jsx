@@ -44,11 +44,8 @@
 import React from "react";
 import Image from "next/image";
 import { ContainerScroll } from "../ui/container-scroll-animation";
-import { FlipWords } from "../ui/flip-words";
 
 import netflix from "../../../public/assets/netflix.png";
-import Btn from "@/Elements/Buttons/Btn";
-import { RiArrowRightLine } from "react-icons/ri";
 import Link from "next/link";
 import { Button } from "../ui/button";
 

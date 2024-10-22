@@ -77,10 +77,12 @@ const TunisTheme = () => {
       {/* {data?.content?.news_letter?.status && <NewsLetter dataAPI={data?.content?.news_letter} />} */}
       {/* {data?.content?.news_letter?.status && <QuickBuy dataAPI={data?.content?.news_letter} />} */}
 
-      <CTAOne />
 
       <AccountTypes />
       {/* <QuickBuy /> */}
+
+      <CTAOne />
+
       <OurProcess />
       <Reviews />
       <BrowserFaq />

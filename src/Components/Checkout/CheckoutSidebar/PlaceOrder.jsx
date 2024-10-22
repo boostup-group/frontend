@@ -19,7 +19,10 @@ const PlaceOrder = ({ values }) => {
     if (resDta?.status == 200 || resDta?.status == 201) {
       resDta?.data?.order_number && setGetOrderNumber(resDta?.data?.order_number);
       // resDta?.data?.order_number && refetch();
-      if (values['payment_method'] == 'cod' || values['payment_method'] == 'bank' || values['payment_method'] == 'cash') {
+      if (values['payment_method'] == 'cod' 
+        || values['payment_method'] == 'bank' 
+        || values['payment_method'] == 'cash'
+        || values['payment_method'] == 'd17') {
         router.push(`/account/order/details/${resDta?.data?.order_number}`);
       } else {
         window.open(resDta?.data?.url, '_self');

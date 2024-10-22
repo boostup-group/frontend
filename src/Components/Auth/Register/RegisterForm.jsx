@@ -14,7 +14,7 @@ import SearchableSelectInput from '@/Components/Common/InputFields/SearchableSel
 const RegisterForm = () => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
-  const { mutate, isLoading } = useCreate(RegisterAPI, false, `/${i18Lang}/auth/login`, 'Register Successfully');
+  const { mutate, isLoading } = useCreate(RegisterAPI, false, `/${i18Lang}/auth/login`, 'Inscription Réussie');
   return (
     <Formik
       initialValues={{

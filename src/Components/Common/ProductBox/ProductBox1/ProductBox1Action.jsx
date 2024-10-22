@@ -6,7 +6,7 @@ const ProductBoxAction = ({ productObj,listClass }) => {
   return (
     <ul className={listClass}>
       <QuickView productObj={productObj} />
-      <AddToCompare productObj={productObj} />
+      {/* <AddToCompare productObj={productObj} /> */}
       <AddToWishlist productObj={productObj} />
     </ul>
   );

@@ -3,6 +3,7 @@ import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from 'rea
 import { useCustomSearchParams } from '@/Utils/Hooks/useCustomSearchParams';
 
 const CollectionAttributes = ({ attributeAPIData, filter, setFilter }) => {
+  console.log('attributeAPIData', attributeAPIData);
   const router = useRouter();
   const [category, price, rating, sortBy, field, layout] = useCustomSearchParams(['category', 'price', 'rating', 'sortBy', 'field', 'layout']);
   const pathname = usePathname();
@@ -36,13 +37,13 @@ const CollectionAttributes = ({ attributeAPIData, filter, setFilter }) => {
   return (
     <>
       {attributeAPIData?.length > 0 &&
-        attributeAPIData?.map((attribute, i) => (
+        attributeAPIData?.filter(attribute => attribute.slug !== 'type-d-abonnement').map((attribute, i) => (
           <AccordionItem key={i}>
             <AccordionHeader targetId={(i + 2).toString()}>
               <span>{attribute?.name}</span>
             </AccordionHeader>
             {attribute?.attribute_values?.length > 0 &&
-              attribute?.attribute_values.map((value, index) => (
+              attribute?.attribute_values.filter(value => value?.value !== "1").map((value, index) => (
                 <AccordionBody accordionId={(i + 2).toString()} key={index}>
                   <ul className='category-list custom-padding'>
                     <li>

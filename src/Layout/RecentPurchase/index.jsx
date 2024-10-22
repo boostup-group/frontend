@@ -67,7 +67,8 @@ const RecentPurchase = () => {
             </Link>
           )}
           <small className='timeAgo'>
-            {min} {t('minutesago')}
+            {/* {min} {t('minutesago')} */}
+            {t('minutesago')}
           </small>
         </div>
       </Media>

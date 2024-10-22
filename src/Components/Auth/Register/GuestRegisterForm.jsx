@@ -15,7 +15,7 @@ import { RiChat2Fill, RiMailFill, RiSmartphoneLine, RiUserFill } from 'react-ico
 const GuestRegisterForm = () => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
-  const { mutate: registerMutate, isLoading: isRegisterLoading } = useCreate(RegisterAPI, false, false, 'Register Successfully');
+  const { mutate: registerMutate, isLoading: isRegisterLoading } = useCreate(RegisterAPI, false, false, 'Inscription Réussie');
   const { mutate: loginMutate } = useHandleLoginGuest(); // Use the login mutation
 
   return (

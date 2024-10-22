@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Col, Row } from 'reactstrap';
-import contactUsImage from '../../../public/assets/images/inner-page/contact-us.png';
+import contactUsImage from '../../../public/assets/contact-us.png';
 import { useContext } from 'react';
 import ThemeOptionContext from '@/Helper/ThemeOptionsContext';
 import I18NextContext from '@/Helper/I18NextContext';
@@ -16,7 +16,7 @@ const ContactLeftSideBox = () => {
       <div className='left-sidebar-box'>
         <Row>
           <Col xl={12}>
-            <div className='contact-image'>
+            <div className='contact-image flex justify-center'>
               <Image src={themeOption?.contact_us?.imageUrl || contactUsImage} className='img-fluid' alt='contact' height={461} width={386} />
             </div>
           </Col>

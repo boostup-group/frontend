@@ -10,7 +10,7 @@ const DropdownAttribute = ({ elem, soldOutAttributesIds, productState, setVarian
         <Fragment key={index}>
           {productState?.attributeValues?.includes(value?.id) ? (
             <option selected={productState?.variantIds?.includes(value.id)} value={index} disabled={soldOutAttributesIds.includes(value.id)}>
-              {value?.value} Mois
+              {value?.value} {isNaN(Number(value?.value)) ? "" : "Mois"}
             </option>
           ) : null}
         </Fragment>

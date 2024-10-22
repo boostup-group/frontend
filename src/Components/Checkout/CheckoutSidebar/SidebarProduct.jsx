@@ -36,7 +36,7 @@ const SidebarProduct = ({ values }) => {
                   height={70}
                 />
                 <div className='cart-content'>
-                  <h4>{item?.variation ? item?.variation?.name : item?.product?.name}</h4>
+                  <h4 className='text-md'>{item?.variation ? item?.product?.name : item?.variation?.name}</h4>
                   <h5 className='text-theme'>
                     {item?.variation ? convertCurrency(item?.variation.sale_price) : convertCurrency(item?.product?.sale_price)} x {item.quantity}
                   </h5>

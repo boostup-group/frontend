@@ -28,7 +28,7 @@ const DetailsTable = ({ data }) => {
                   <th scope='col'>{t('Price')}</th>
                   <th scope='col'>{t('Quantity')}</th>
                   <th scope='col'>{t('Subtotal')}</th>
-                  <th scope='col'>{t('RefundStatus')}</th>
+                  {/* <th scope='col'>{t('RefundStatus')}</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -52,15 +52,15 @@ const DetailsTable = ({ data }) => {
                           <h6>{product?.pivot?.variation ? product?.pivot?.variation?.name : product?.name}</h6>
                         </td>
                         <td>
-                          <h6>{product?.pivot?.single_price}</h6>
+                          <h6>{product?.pivot?.single_price} DT</h6>
                         </td>
                         <td>
                           <h6>{product?.pivot?.quantity}</h6>
                         </td>
                         <td>
-                          <h6>{product?.pivot?.subtotal}</h6>
+                          <h6>{product?.pivot?.subtotal} DT</h6>
                         </td>
-                        <td>{product?.is_return === 1 && product?.pivot?.is_refunded === 0 ? <a onClick={() => onModalOpen(product)}>{t('AskForRefund')}</a> : '-'}</td>
+                        {/* <td>{product?.is_return === 1 && product?.pivot?.is_refunded === 0 ? <a onClick={() => onModalOpen(product)}>{t('AskForRefund')}</a> : '-'}</td> */}
                       </tr>
                     ))
                   : null}

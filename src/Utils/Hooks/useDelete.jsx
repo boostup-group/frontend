@@ -7,7 +7,7 @@ const useDelete = (url, refetch) => {
   const queryClient = useQueryClient();
   return useMutation((deleteId) => request({ url: `${url}/${deleteId}`, method: 'delete' }), {
     onSuccess: (resData) => {
-      SuccessHandle(resData, false, false, 'Deleted Successfully');
+      SuccessHandle(resData, false, false, 'Supprimé avec succès');
       refetch && queryClient.invalidateQueries({ queryKey: [refetch] });
     },
   });

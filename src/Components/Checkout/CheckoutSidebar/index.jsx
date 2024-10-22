@@ -47,6 +47,7 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
     // }, 0);
 
   // console.log('here values', values['products'].sub_total);
+
   return (
     <Col xxl='4' xl='5'>
       <Card className='pos-detail-card'>
@@ -62,11 +63,12 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
               <h4>{t('Shipping')}</h4>
               <h4 className='price'>{data?.data?.total?.shipping_total >= 0 ? convertCurrency(data?.data?.total?.shipping_total) : t(`Notcalculatedyet`)}</h4>
             </li> */}
-            <li>
+            
+            {/* <li>
               <h4>{t('Tax')}</h4>
               
               <h4 className='price'>{data?.data?.total?.tax_total ? convertCurrency(data?.data?.total?.tax_total) : t(`Notcalculatedyet`)}</h4>
-            </li>
+            </li> */}
 
             <PointWallet values={values} setFieldValue={setFieldValue} data={data} />
 

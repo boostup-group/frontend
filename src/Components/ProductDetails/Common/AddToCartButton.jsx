@@ -5,6 +5,8 @@ import I18NextContext from '@/Helper/I18NextContext';
 import { useTranslation } from '@/app/i18n/client';
 
 const AddToCartButton = ({ productState, addToCart, isLoading, buyNow, extraOption }) => {
+  console.log('productState', productState);
+  // console.log('extraOption', extraOption);
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   return (

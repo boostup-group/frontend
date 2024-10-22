@@ -18,10 +18,27 @@ const DetailStatus = ({ data }) => {
   const imageObj = {
     processing: processingImage,
     pending: pendingImage,
-    shipped: shippedImage,
+    // shipped: shippedImage,
     delivered: deliveredImage,
-    outfordelivery: outfordeliveryImage,
+    // outfordelivery: outfordeliveryImage,
     cancelled: cancelledImage,
+  };
+
+  const statusInFrench = (elem) => {
+    switch (elem?.name?.replace('_', ' ')) {
+      case 'pending':
+        return 'en attente';
+      case 'processing':
+        return 'en cours';
+      case 'shipped':
+        return 'expédié';
+      case 'out for delivery':
+        return 'en cours de livraison';
+      case 'delivered':
+        return 'livré';
+      default:
+        return elem?.name?.replace('_', ' '); // Default to the original status if no match
+    }
   };
   return (
     <div className='mb-4'>
@@ -29,7 +46,8 @@ const DetailStatus = ({ data }) => {
         {data && !data?.sub_orders?.length ? (
           <ul>
             {orderStatus?.length > 0
-              ? orderStatus?.map((elem, i) => (
+              ? orderStatus?.filter((elem) => elem?.slug !== 'shipped' && elem?.slug !== 'out-for-delivery')
+              .map((elem, i) => (
                   <li
                     key={i}
                     className={
@@ -41,7 +59,7 @@ const DetailStatus = ({ data }) => {
                           <Image src={elem?.slug == 'out-for-delivery' ? imageObj['outfordelivery'] : imageObj[elem?.slug]} className='img-fluid' alt={elem?.slug} height={40} width={40} />
                         )}
                       </div>
-                      <div className='status'>{elem?.name?.replace('_', ' ')}</div>
+                      <div className='status'> {statusInFrench(elem)}</div>
                     </div>
                   </li>
                 ))

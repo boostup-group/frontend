@@ -45,12 +45,12 @@ const SubLayout = ({ children }) => {
   return (
     <>
       <MainHeader />
-      <MobileMenu />
+      {/* <MobileMenu /> */}
       {children}
       <TapTop />
       <MainFooter />
       {/* <CookiesComponent /> */}
-      <StickyCompare />
+      {/* <StickyCompare /> */}
       <RecentPurchase />
       {/* {!isNewsLetter && <NewsLetterModal />} */}
       {/* <ExitModal /> */}

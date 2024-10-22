@@ -10,10 +10,9 @@ const CustomerOrderCount = ({ productState }) => {
   const [viewerCount, setViewerCount] = useState(30);
   let timer;
   useEffect(() => {
-    timer = setInterval(() => {
-      let encourage_max_view_count = themeOption?.product?.encourage_max_view_count ? themeOption?.product?.encourage_max_view_count : 100;
-      setCustomerOrder(Math?.floor(Math.random() * encourage_max_view_count) + 1);
-    }, 5000);
+
+    let encourage_max_view_count = themeOption?.product?.encourage_max_view_count ? themeOption?.product?.encourage_max_view_count : 100;
+    setCustomerOrder(Math?.floor(Math.random() * encourage_max_view_count) + 1);
 
     timer = setInterval(() => {
       let encourage_max_order_count = themeOption?.product?.encourage_max_order_count ? themeOption?.product?.encourage_max_order_count : 100;

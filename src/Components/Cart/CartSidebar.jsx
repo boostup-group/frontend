@@ -32,10 +32,10 @@ const CartSidebar = () => {
               <h4 className='price text-end'>{t('CostatCheckout')}</h4>
             </li> */}
 
-            <li className='align-items-start'>
+            {/* <li className='align-items-start'>
               <h4>{t('Tax')}</h4>
               <h4 className='price text-end'>{t('CostatCheckout')}</h4>
-            </li>
+            </li> */}
           </ul>
         </div>
 
