@@ -2,18 +2,18 @@ import * as Yup from "yup";
 
 export const YupObject = (schemaObject) => Yup.object().shape(schemaObject);
 
-export const emailSchema = Yup.string().email("Enter Valid Email").required();
-export const passwordSchema = Yup.string().min(8, "Too Short!").max(20, "Too Long!").required();
+export const emailSchema = Yup.string().email("Saisir un e-mail valide").required();
+export const passwordSchema = Yup.string().min(8, "Trop court !").max(20, "Trop long !").required();
 export const nameSchema = Yup.string().required();
 export const recaptchaSchema = Yup.string().required();
-export const descriptionSchema = Yup.string().required().min(10, "The description must be at least 10 characters.");
+export const descriptionSchema = Yup.string().required().min(10, "La description doit comporter au moins 10 caractères.");
 export const roleIdSchema = Yup.string().required();
 export const permissionsSchema = Yup.array().min(1).required();
 export const dropDownScheme = Yup.array().min(1).required();
 export const passwordConfirmationSchema = Yup.string()
   .when("password", {
     is: (val) => (val && val.length > 0 ? true : false),
-    then: Yup.string().oneOf([Yup.ref("password")], "Both password need to be the same"),
+    then: Yup.string().oneOf([Yup.ref("password")], "Les deux mots de passe doivent être identiques"),
   }).required();
 
 export const visibleTimeSchema = Yup.date().when("stock_status", {
@@ -55,7 +55,7 @@ export const discountSchema = Yup.number().min(0).max(100);
 export const requiredSchema = Yup.mixed().required();
 export const StatusSchema = Yup.boolean().required();
 
-export const phoneSchema = Yup.string().min(8).max(8).required()
+export const phoneSchema = Yup.string().min(8).max(10).required()
 
 export const ifIsApplyAll = Yup.array().when("is_apply_all", {
   is: (val) => !val,
