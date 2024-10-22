@@ -38,25 +38,25 @@ const GuestRegisterForm = () => {
         // Delay the submission
         setTimeout(() => {
           // Register the user
-          console.log("Submitting registration...");
+          // console.log("Submitting registration...");
           registerMutate(values, {
             onSuccess: (response) => {
-              console.log('Registration successful:', response);
+              // console.log('Registration successful:', response);
               // Trigger login only after registration success
               loginMutate({
                 email: values.email,
                 password: values.password,
               }, {
                 onSuccess: (loginResponse) => {
-                  console.log('Login successful:', loginResponse);
+                  // console.log('Login successful:', loginResponse);
                 },
                 onError: (loginError) => {
-                  console.error('Login failed:', loginError);
+                  // console.error('Login failed:', loginError);
                 }
               });
             },
             onError: (error) => {
-              console.error('Registration failed:', error);
+              // console.error('Registration failed:', error);
             },
           });
         }, 2000); // 1 second delay before submitting
@@ -68,11 +68,11 @@ const GuestRegisterForm = () => {
           validateForm().then((validationErrors) => {
             const noErrors = Object.keys(validationErrors).length === 0;
             if (noErrors) {
-              console.log('Form is valid, ready to submit.');
+              // console.log('Form is valid, ready to submit.');
               // Automatically trigger form submission if valid
               registerMutate(values, {
                 onSuccess: (response) => {
-                  console.log('Registration successful:', response);
+                  // console.log('Registration successful:', response);
                   // Proceed with login
                   loginMutate({
                     email: values.email,
@@ -81,7 +81,7 @@ const GuestRegisterForm = () => {
                 },
               });
             } else {
-              console.log('Form has validation errors:', validationErrors);
+              // console.log('Form has validation errors:', validationErrors);
             }
           });
         }, [values, validateForm]); // Runs whenever form values change

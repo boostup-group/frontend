@@ -71,7 +71,7 @@ const ProductDetailContent = ({ params }) => {
     };
   }, []);
 
-  // if (isLoading) return <Loader />;
+  if (isLoading) return <Loader />;
 
   const showProductLayout = {
     product_thumbnail: <ProductThumbnail productState={productState} setProductState={setProductState} />,

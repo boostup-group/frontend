@@ -34,7 +34,7 @@ const MenuSlider = ({ menu }) => {
 
       const data = await response.json();
       setProductAPIData(data);
-      console.log('Product Data:', data);
+      // console.log('Product Data:', data);
     } catch (error) {
       console.error('Error fetching product data:', error);
     }
@@ -45,7 +45,7 @@ const MenuSlider = ({ menu }) => {
   }, []);
 
 
-  console.log(productAPIData?.data)
+  // console.log(productAPIData?.data)
 
   return (
     <>

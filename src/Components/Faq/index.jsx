@@ -29,7 +29,7 @@ const BrowserFaq = () => {
     select: (data) => data?.data?.data,
   });
 
-  console.log('faqs', data);
+  // console.log('faqs', data);
   // if (isLoading) return <Loader />;
   return (
     <>

@@ -63,11 +63,11 @@ const CTAOne = () => {
                     <h2 className="text-xl sm:text-4xl md:text-2xl lg:text-4xl font-bold ctaOne-heading">
                         Vous voulez créer votre compte vous-même ? Achetez nos cartes cadeaux Netflix et commencez à regarder en quelques minutes !
                     </h2>
-                    <Button className="relative inline-flex items-center justify-center rounded-md bg-[#E50914] text-white dark:bg-white px-8 py-4 font-bold text-md dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                        <Link href="/product/carte-cadeau-netflix">
-                        Obtenez-la dès maintenant
-                        </Link>
-                    </Button>
+                    <Link href="/product/carte-cadeau-netflix">
+                        <Button className="relative inline-flex items-center justify-center rounded-md bg-[#E50914] text-white dark:bg-white px-8 py-4 font-bold text-md dark:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                            Obtenez-la dès maintenant
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Image Section */}

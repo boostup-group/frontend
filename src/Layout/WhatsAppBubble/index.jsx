@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
 
 
-export default function WhatsAppBubble({ phoneNumber = '1234567890', message = 'Hello! I have a question.' }) {
+export default function WhatsAppBubble({ phoneNumber = '+21624221388', message = 'Hello! I have a question.' }) {
   const [text, setText] = useState('')
   const fullText = 'Profitez maintenant!'
   const [isAnimating, setIsAnimating] = useState(true)

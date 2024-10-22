@@ -11,7 +11,7 @@ const FooterUseFul = ({ footerMenu, setFooterMenu }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
 
-  console.log('footer links:', themeOption?.footer?.useful_link);
+  // console.log('footer links:', themeOption?.footer?.useful_link);
 
   return (
     <Col >

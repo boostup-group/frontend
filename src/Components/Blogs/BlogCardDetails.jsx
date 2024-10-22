@@ -21,7 +21,7 @@ const BlogCardDetails = ({ Blog }) => {
     left_sidebar: { class: 'order-lg-2', colClass: { xxl: 9, xl: 8, lg: 7 } },
     right_sidebar: { colClass: { xxl: 9, xl: 8, lg: 7 } },
   };
-  console.log(Blog)
+  // console.log(Blog)
   return (
     <Col {...styleObj[querySidebar ?? themeOption?.blog?.blog_sidebar_type]?.colClass} className={`ratio_50 ${styleObj[querySidebar ?? themeOption?.blog?.blog_sidebar_type]?.class}`}>
       <h2 className='mb-4 text-4xl font-bold'>

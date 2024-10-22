@@ -17,7 +17,7 @@ const FooterSupportNumber = () => {
             <div className='contact-number'>
               <h6 className='text-content'>WhatsApp  24/7 :</h6>
               <h5>{themeOption?.footer?.support_number}</h5>
-              <h5>{themeOption?.footer?.support_number}</h5>
+              <h5>+216 24 221 388</h5>
             </div>
           </div>
         </li>

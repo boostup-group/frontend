@@ -3,7 +3,7 @@ import { AccordionBody, AccordionHeader, AccordionItem, Input, Label } from 'rea
 import { useCustomSearchParams } from '@/Utils/Hooks/useCustomSearchParams';
 
 const CollectionAttributes = ({ attributeAPIData, filter, setFilter }) => {
-  console.log('attributeAPIData', attributeAPIData);
+  // console.log('attributeAPIData', attributeAPIData);
   const router = useRouter();
   const [category, price, rating, sortBy, field, layout] = useCustomSearchParams(['category', 'price', 'rating', 'sortBy', 'field', 'layout']);
   const pathname = usePathname();
