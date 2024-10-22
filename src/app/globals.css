@@ -152,3 +152,7 @@
     text-align: center !important;
   }
 }
+
+header .top-nav .navbar-top .web-logo img {
+  width: calc(120px + 42*(100vw - 320px) / 700) !important;
+}

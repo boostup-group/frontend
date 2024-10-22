@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Btn from '@/Elements/Buttons/Btn';
 import ThemeOptionContext from '@/Helper/ThemeOptionsContext';
 import Link from 'next/link';
-import logoImage from '../../../../public/assets/images/logo/1.png';
+import logoImage from '../../../../public/assets/images/logo/logo.png';
 import { RiMenuLine } from 'react-icons/ri';
 import { usePathname } from 'next/navigation';
 import I18NextContext from '@/Helper/I18NextContext';
@@ -56,7 +56,7 @@ const HeaderLogo = () => {
         </span>
       </Btn>
       <Link href='/' className='web-logo nav-logo'>
-        {isImage ? <Image src={logo} className="img-fluid" alt='Header' height={28} width={162} /> : <img src={logo ? logo : logoImage} className="img-fluid" alt='Header' height={28} width={162} />}
+        <Image src={logoImage} className="img-fluid" alt='Header' height={28} width={162} />
       </Link>
     </>
   );

@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { useContext } from 'react';
 import { Col, Row } from 'reactstrap';
 import coinSvg from '../../../../public/assets/images/svg/coin.svg';
+import coinIcon from '../../../../public/assets/images/dashboard/coin.png';
+import orderIcon from '../../../../public/assets/images/dashboard/order.png';
+import walletIcon from '../../../../public/assets/images/dashboard/wallet.png';
 import orderSvg from '../../../../public/assets/images/svg/order.svg';
 import wallerSvg from '../../../../public/assets/images/svg/wallet.svg';
 import ProfileInformation from './ProfileInformation';
@@ -29,7 +32,7 @@ const DashboardContent = () => {
           <Col xxl={4} lg={6} md={4} sm={6}>
             <div className='total-contain'>
               <Image src={wallerSvg} className='img-1' alt='wallerSvg' height={90} width={90} />
-              <Image src={wallerSvg} alt='wallerSvg' height={60} width={60} />
+              <Image src={walletIcon} alt='wallerSvg' height={60} width={60} />
               <div className='total-detail'>
                 <h5>{t('Balance')}</h5>
                 <h3>{Number(accountData?.wallet ? accountData?.wallet?.balance : 0)?.toFixed(2)}</h3>
@@ -40,7 +43,7 @@ const DashboardContent = () => {
           <Col xxl={4} lg={6} md={4} sm={6}>
             <div className='total-contain'>
               <Image src={coinSvg} className='img-1 ' alt='coinSvg' height={90} width={90} />
-              <Image src={coinSvg} className='' alt='coinSvg' height={60} width={60} />
+              <Image src={coinIcon} className='' alt='coinSvg' height={60} width={60} />
               <div className='total-detail'>
                 <h5>Total Points</h5>
                 <h3>{Number(accountData?.point ? accountData?.point?.balance : 0)?.toFixed(2)}</h3>
@@ -51,7 +54,7 @@ const DashboardContent = () => {
           <Col xxl={4} lg={6} md={4} sm={6}>
             <div className='total-contain'>
               <Image src={orderSvg} className='img-1 ' alt='orderSvg' height={90} width={90} />
-              <Image src={orderSvg} className='' alt='orderSvg' height={60} width={60} />
+              <Image src={orderIcon} className='' alt='orderSvg' height={60} width={60} />
               <div className='total-detail'>
                 <h5>{t("TotalOrders")}</h5>
                 <h3>{Number(accountData?.orders_count ? accountData?.orders_count : 0)}</h3>

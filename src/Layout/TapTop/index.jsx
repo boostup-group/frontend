@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { RiArrowUpSLine } from "react-icons/ri";
 import ThemeOptionContext from "@/Helper/ThemeOptionsContext";
+import WhatsAppBubble from "../WhatsAppBubble";
 
 const TapTop = () => {
   const [taptopStyle, setTapTopStyle] = useState("none");
@@ -27,14 +28,18 @@ const TapTop = () => {
   }, []);
   return (
     <>
-      <div className="theme-option">
-        {themeOption?.general?.back_to_top_enable && (
-          <div className="back-to-top" style={{ display: taptopStyle }}>
+      <div className="theme-option flex justify-between items-center fixed bottom-5 w-full px-5 z-50">
+        {/* <WhatsAppBubble /> */}
+        <div className="back-to-top" style={{ display: taptopStyle }}>
+          {themeOption?.general?.back_to_top_enable && (
             <a onClick={() => executeScroll()}>
               <RiArrowUpSLine />
             </a>
-          </div>
-        )}
+          )}
+        </div>
+        <div className="whatsapp-bubble">
+          <WhatsAppBubble />
+        </div>
       </div>
     </>
   );
