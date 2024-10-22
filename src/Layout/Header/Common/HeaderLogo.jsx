@@ -8,7 +8,7 @@ import { RiMenuLine } from 'react-icons/ri';
 import { usePathname } from 'next/navigation';
 import I18NextContext from '@/Helper/I18NextContext';
 import { useTranslation } from '@/app/i18n/client';
-import ParisLogo from '../../../../public/assets/images/logo/1.png';
+import ParisLogo from '../../../../public/assets/images/logo/logo.png';
 import TokyoLogo from '../../../../public/assets/images/logo/2.png';
 import RomeLogo from '../../../../public/assets/images/logo/3.png';
 import MadridLogo from '../../../../public/assets/images/logo/4.png';
