@@ -163,3 +163,7 @@ header .top-nav .navbar-top .web-logo img {
       z-index: 99 !important;
   }
 }
+
+.coupon-sec .apply-sec > div {
+  align-items: center;
+}

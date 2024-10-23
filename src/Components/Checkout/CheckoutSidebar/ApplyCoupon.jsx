@@ -59,7 +59,7 @@ const ApplyCoupon = ({ data, setFieldValue, storeCoupon, setStoreCoupon, values 
       {appliedCoupon == 'applied' ? (
         <li className='coupon-sec'>
           <div className='apply-sec mb-3'>
-            <div className='align-center'>
+            <div>
               {/* <Image src={'/assets/images/offer.gif'} className='img-fluid' height={20} width={20} alt='offer' /> */}
               <RiCheckFill className='text-success bg-white rounded-full' />
               <h4>
