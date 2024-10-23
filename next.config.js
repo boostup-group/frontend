@@ -10,7 +10,7 @@ const nextConfig = {
     ];
   },
   env: {
-    API_PROD_URL: "http://147.79.118.30:8000/api/",
+    API_PROD_URL: "https://api.netflixtunisie.com/api/",
     // API_PROD_URL: "https://laravel.pixelstrap.net/fastkart/api/",
     PAYMENT_RETURN_URL: "http://204.216.214.207:3000",
     PAYMENT_CANCEL_URL: "http://204.216.214.207:3000/",
