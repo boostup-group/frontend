@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Card, Col } from 'reactstrap';
-import SettingContext from '../../../Helper/SettingContext';
+import SettingContext from '@/Helper/SettingContext';
 import { useTranslation } from '@/app/i18n/client';
 import SidebarProduct from './SidebarProduct';
 import useCreate from '@/Utils/Hooks/useCreate';
@@ -22,31 +22,36 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
 
   const isAuth = Cookies.get('uat');
 
-
   const { data, mutate, isLoading } = useCreate(CheckoutAPI, false, false, true, false, false);
-  // Submitting data on Checkout
 
-  // toast unauthenticated produced error
+  // Recalculate total based on cart products, coupon, points, etc.
   useEffect(() => {
-    if (values['delivery_description'] && values['payment_method']) {
+    if (values['payment_method']) {
       values['variation_id'] = '';
       delete values['total'];
       values['products'] = cartProducts;
       values['return_url'] = `${process.env.PAYMENT_RETURN_URL}/${i18Lang}/account/order/details`;
       values['cancel_url'] = process.env.PAYMENT_CANCEL_URL;
-      values['products']?.length > 0 && mutate(values);
-      if (isLoading) {
-        setStoreCoupon('');
+
+      // Recalculate total when products, payment method, or other fields change
+      if (values['products']?.length > 0) {
+        // Recalculate total (before coupon)
+        const subTotal = values.products.reduce((total, product) => total + product.sub_total, 0);
+
+        setFieldValue('sub_total', subTotal);
+        let total = subTotal; // Start with subtotal for total calculation
+
+        // Check if coupon discount is applied and adjust the total
+        if (storeCoupon && data?.data?.total?.coupon_total_discount) {
+          const couponDiscount = data?.data?.total?.coupon_total_discount;
+          total -= couponDiscount; // Apply coupon discount
+        }
+
+        setFieldValue('total', total); // Set the total after discount
+        mutate({ ...values, coupon: storeCoupon }); // Ensure the coupon is included in the mutation
       }
     }
-  }, [values['payment_method'], values['delivery_description'], values['points_amount'], values['wallet_balance']]);
-
-    // Calculate subtotal and total
-    // const subtotal = values.products.reduce((total, product) => {
-    //   console.log('here', product.sub_total);
-    // }, 0);
-
-  // console.log('here values', values['products'].sub_total);
+  }, [values['payment_method'], cartProducts, storeCoupon]); // Only keep relevant dependencies
 
   return (
     <Col xxl='4' xl='5'>
@@ -57,26 +62,22 @@ const CheckoutSidebar = ({ values, setFieldValue }) => {
             {isLoading && <Loader />}
             <li>
               <h4>{t('Subtotal')}</h4>
-              <h4 className='price'>{data?.data?.total?.sub_total ? convertCurrency(data?.data?.total?.sub_total) : t(`Notcalculatedyet`)}</h4>
+              <h4 className='price'>{values.sub_total ? convertCurrency(values.sub_total) : t(`Notcalculatedyet`)}</h4>
             </li>
-            {/* <li>
-              <h4>{t('Shipping')}</h4>
-              <h4 className='price'>{data?.data?.total?.shipping_total >= 0 ? convertCurrency(data?.data?.total?.shipping_total) : t(`Notcalculatedyet`)}</h4>
-            </li> */}
-            
-            {/* <li>
-              <h4>{t('Tax')}</h4>
-              
-              <h4 className='price'>{data?.data?.total?.tax_total ? convertCurrency(data?.data?.total?.tax_total) : t(`Notcalculatedyet`)}</h4>
-            </li> */}
 
             <PointWallet values={values} setFieldValue={setFieldValue} data={data} />
 
-            <ApplyCoupon values={values} setFieldValue={setFieldValue} data={data} storeCoupon={storeCoupon} setStoreCoupon={setStoreCoupon} />
+            <ApplyCoupon
+              values={values}
+              setFieldValue={setFieldValue}
+              data={data}
+              storeCoupon={storeCoupon}
+              setStoreCoupon={setStoreCoupon}
+            />
 
             <li className='list-total'>
               <h4>{t('Total')}</h4>
-              <h4 className='price'>{data?.data?.total?.total ? convertCurrency(data?.data?.total?.total) : t(`Notcalculatedyet`)}</h4>
+              <h4 className='price'>{values.total ? convertCurrency(values.total) : t(`Notcalculatedyet`)}</h4>
             </li>
           </ul>
         </div>

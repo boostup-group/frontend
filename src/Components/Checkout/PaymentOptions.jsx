@@ -15,9 +15,8 @@ const PaymentOptions = ({ values, setFieldValue }) => {
   const { i18Lang } = useContext(I18NextContext);
   const { t } = useTranslation(i18Lang, 'common');
   const { settingData } = useContext(SettingContext);
-  const [intial, setInitial] = useState('');
+  const [initial, setInitial] = useState(0); // This should hold the index of the selected method
   
-  // Define a function to select the appropriate image based on the payment method name
   const getPaymentImage = (name) => {
     switch (name) {
       case 'd17':
@@ -34,9 +33,16 @@ const PaymentOptions = ({ values, setFieldValue }) => {
   };
 
   useEffect(() => {
-    setFieldValue('payment_method', 'click_to_pay');
-    setInitial(0);
-  }, []);
+    // Find the index of the payment method 'click_to_pay' to set it as the default method
+    const defaultMethodIndex = settingData?.payment_methods?.findIndex(
+      (method) => method.name === 'click_to_pay' && method.status
+    );
+    
+    if (defaultMethodIndex >= 0) {
+      setInitial(defaultMethodIndex);
+      setFieldValue('payment_method', 'click_to_pay');
+    }
+  }, [settingData, setFieldValue]);
 
   return (
     <CheckoutCard icon={<RiBankCardLine />}>
@@ -55,7 +61,7 @@ const PaymentOptions = ({ values, setFieldValue }) => {
                         <Input
                           className='form-check-input'
                           id={elem?.name}
-                          checked={i == intial}
+                          checked={i === initial}
                           type='radio'
                           name='payment_method'
                           onChange={() => {
@@ -66,11 +72,9 @@ const PaymentOptions = ({ values, setFieldValue }) => {
                         <Label className='form-check-label' htmlFor={elem.name}>
                           {elem?.title}
                         </Label>
-                        {/* Add payment method image */}
                         <div className='payment-image'>
                           <Image src={getPaymentImage(elem?.name)} alt={`${elem?.name} logo`} width="50" height="25" />
                         </div>
-                        {/* Add description below */}
                         <div className="form-description p-2">
                           {elem?.name == 'd17' && <p className='text-xs'>Envoyer le montant à notre numéro 54993969 via l'application D17.</p>}
                           {elem?.name == 'bank' && <p className='text-xs'>Un virement bancaire sur notre compte à Zitouna ou BT. Nous vous enverrons le numéro de compte par whatsapp.</p>}
